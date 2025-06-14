@@ -150,10 +150,7 @@
 
 
 
-import React, { useEffect, useRef } from "react";
-
-// import { animate } from 'animejs';
-import { animate } from 'animejs';
+import React from "react";
 import { Link } from "react-router-dom";
 
 const MainPage = () => {
