@@ -154,55 +154,15 @@ import React, { useEffect, useRef } from "react";
 
 // import { animate } from 'animejs';
 import { animate } from 'animejs';
+import { Link } from "react-router-dom";
 
-const CircularLoader = () => {
-    const outerCircleRef = useRef(null);
-
-    useEffect(() => {
-        if (outerCircleRef.current) {
-            animate({
-                targets: outerCircleRef.current,
-                rotate: '360deg',
-                duration: 3000,
-                easing: 'linear',
-                loop: true,
-            });
-        }
-    }, []);
-
-    // Generate 90 tick marks around the circle
-    const ticks = Array.from({ length: 90 }, (_, i) => {
-        const rotate = i * 4; // 360 / 90 = 4 degrees between ticks
-        return (
-            <div
-                key={i}
-                className="tick"
-                style={{
-                    transform: `rotate(${rotate}deg) translateY(-140px)`,
-                    transformOrigin: "center",
-                    width: "2px",
-                    height: "10px",
-                    backgroundColor: "red",
-                    position: "absolute",
-                    top: "50%",
-                    left: "50%",
-                }}
-            />
-        );
-    });
+const MainPage = () => {
 
     return (
-        <div className="flex items-center justify-center h-screen bg-black">
-            {/* Outer Circle that rotates */}
-            <div
-                ref={outerCircleRef}
-                className="relative w-[300px] h-[300px] rounded-full"
-                style={{ transformOrigin: "center center" }}
-            >
-                {ticks}
-            </div>
+        <div className="flex items-center justify-center h-screen">
+            <Link to='/about'>About</Link>
         </div>
     );
 };
 
-export default CircularLoader;
+export default MainPage;
