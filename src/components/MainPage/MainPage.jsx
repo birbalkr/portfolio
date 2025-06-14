@@ -1,165 +1,105 @@
-// import { useEffect, useRef, useState } from 'react';
-// import { avatar } from '../../assets';
-// import '../../index.css'
-// import { utils, stagger, createScope, createTimeline, animate } from 'animejs';
-
-
-
-// function MainPage() {
-
-//     useEffect(() => {
-//         const [$button1, $button2] = utils.$('.revert');
-
-//         function onMouseEnter() { animate(this, { scale: 2, duration: 250 }) }
-//         function onMouseLeave() { animate(this, { scale: 1, duration: 750 }) }
-
-//         const scopeConstructor = scope => {
-//             const circles = utils.$('.circle');
-
-//             circles.forEach(($circle, i) => {
-//                 animate($circle, {
-//                     opacity: .25,
-//                     loop: true,
-//                     alternate: true,
-//                     duration: 500,
-//                     delay: i * 100,
-//                     ease: 'inOut(3)',
-//                 });
-//                 $circle.addEventListener('mouseenter', onMouseEnter);
-//                 $circle.addEventListener('mouseleave', onMouseLeave);
-//             });
-
-//             // Cleanup function to take care of removing event listeners on revert
-//             return () => {
-//                 circles.forEach($circle => {
-//                     // Anime.js instances are automatically reverted by the Scope
-//                     $circle.removeEventListener('mouseenter', onMouseEnter);
-//                     $circle.removeEventListener('mouseleave', onMouseLeave);
-//                 });
-//             }
-//         }
-
-//         const scope1 = createScope({ root: '.row-1' }).add(scopeConstructor);
-//         const scope2 = createScope({ root: '.row-2' }).add(scopeConstructor);
-
-//         const revertScope1 = () => scope1.revert();
-//         const revertScope2 = () => scope2.revert();
-
-//         $button1.addEventListener('click', revertScope1);
-//         $button2.addEventListener('click', revertScope2);
-//     }, []);
-//     return (
-//         <>
-//             <div className="flex">
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//             </div>
-//             <div className="flex">
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//                 <div className="circle"></div>
-//             </div>
-//             <div className="medium row">
-//                 <fieldset className="controls">
-//                     <button className="button revert">Revert row 1</button>
-//                     <button className="button revert">Revert row 2</button>
-//                 </fieldset>
-//             </div>
-
-
-
-//             <div className="flex items-center justify-center min-h-screen bg-black">
-//                 <div className="relative w-[400px] h-[400px] rounded-full">
-//                     {/* Outer Ring */}
-//                     <div
-//                         className="absolute inset-0 rounded-full"
-//                         style={{
-//                             background: `conic-gradient(
-//               #00ff00 0deg 40deg,
-//               #ffff00 40deg 70deg,
-//               #ff0000 70deg 110deg,
-//               #ffaa00 110deg 150deg,
-//               #00ffff 150deg 200deg,
-//               #00ff00 200deg 360deg
-//             )`,
-//                             padding: "8px",
-//                         }}
-//                     />
-
-//                     {/* Inner Circle */}
-//                     <div className="absolute inset-[8px] rounded-full bg-black flex items-center justify-center">
-//                         <div className="w-[300px] h-[300px] rounded-full bg-[#111] relative flex items-center justify-center">
-//                             {/* SVG Red Dot Curve */}
-//                             <svg
-//                                 width="300"
-//                                 height="300"
-//                                 viewBox="0 0 300 300"
-//                                 className="absolute"
-//                             >
-//                                 {/* Create a curved path */}
-//                                 <path
-//                                     id="curvePath"
-//                                     d="M 30 250 Q 150 50 270 250"
-//                                     fill="none"
-//                                 />
-
-//                                 {/* Red Dots Along the Curve */}
-//                                 {[...Array(20)].map((_, i) => (
-//                                     <circle
-//                                         key={i}
-//                                         r="4"
-//                                         fill="red"
-//                                         cx={0}
-//                                         cy={0}
-//                                     >
-//                                         <animateMotion
-//                                             dur="5s"
-//                                             repeatCount="indefinite"
-//                                             begin={`${i * 0.2}s`}
-//                                         >
-//                                             <mpath href="#curvePath" />
-//                                         </animateMotion>
-//                                     </circle>
-//                                 ))}
-//                             </svg>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-
-//         </>
-//     )
-// }
-
-// export default MainPage;
-
-
-
-
-
 import React from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { facebook, github, linkedin, banner, whatsapp } from "../../assets";
+import "../../index.css";
 
-const MainPage = () => {
-
-    return (
-        <div className="flex items-center justify-center h-screen text-8xl">
-            <Link to='/about'>About Me</Link>
-        </div>
-    );
+const containerVariants = {
+    hidden: {},
+    visible: {
+        transition: {
+            staggerChildren: 0.2,
+        },
+    },
 };
+
+const fadeInUp = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, type: "spring" } },
+};
+
+const scaleIn = {
+    hidden: { opacity: 0, scale: 0.9 },
+    visible: { opacity: 1, scale: 1, transition: { duration: 0.6 } },
+};
+
+function MainPage() {
+    return (
+        <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white px-6 py-12 font-sans"
+        >
+            {/* Header */}
+            <motion.header
+                variants={fadeInUp}
+                className="text-center mb-10"
+            >
+                <h1 className="text-4xl font-bold text-white">
+                    Portfolio <span className="text-violet-500">Birbal Kumar</span>
+                </h1>
+            </motion.header>
+
+            {/* Hero Section */}
+            <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 max-w-7xl mx-auto">
+                {/* Left Column */}
+                <motion.div
+                    variants={containerVariants}
+                    className="flex flex-col items-start space-y-6 md:w-1/2"
+                >
+
+                    {/* Text */}
+                    <motion.div variants={fadeInUp}>
+                        <p className="text-violet-400 text-xl mb-1">Hello, I'm</p>
+                        <h2 className="text-5xl font-extrabold leading-tight mb-4 text-white">Birbal Kumar</h2>
+                        <p className="text-lg text-gray-300 leading-relaxed mb-2">
+                            I'm a passionate Full Stack Developer dedicated to building powerful, user-friendly, and secure web applications.
+                            My expertise lies in leveraging modern JavaScript frameworks, backend technologies, and cloud solutions to deliver scalable digital products.
+                        </p>
+                        <p className="text-lg text-gray-300 leading-relaxed">
+                            Whether it's frontend development with React or backend architecture with Node.js, I’m committed to crafting intuitive interfaces and reliable systems
+                            that provide exceptional user experiences and business value.
+                        </p>
+                    </motion.div>
+
+                    {/* Socials */}
+                    <motion.div className="flex gap-4">
+                        {[facebook, github, linkedin,whatsapp].map((icon, i) => (
+                            <motion.img
+                                key={i}
+                                src={icon}
+                                alt="social"
+                                className="w-10 h-10 p-2 bg-gray-700 rounded-full hover:bg-violet-600 transition transform hover:scale-110 cursor-pointer shadow-md"
+                                variants={fadeInUp}
+                            />
+                        ))}
+                    </motion.div>
+                    {/* CTA */}
+                    <motion.div variants={fadeInUp}>
+                        <Link
+                            to="/about"
+                            className="inline-block px-6 py-3 bg-gradient-to-r from-blue-500 to-violet-600 text-white text-lg rounded-full shadow-lg hover:scale-105 transition-transform"
+                        >
+                            About Us
+                        </Link>
+                    </motion.div>
+                </motion.div>
+
+                {/* Right Column (Image) */}
+                <motion.div
+                    variants={scaleIn}
+                    className="md:w-1/2"
+                >
+                    <img
+                        src={banner}
+                        alt="Banner"
+                        className=" w-full max-h-[500px] object-cover"
+                    />
+                </motion.div>
+            </div>
+        </motion.div>
+    );
+}
 
 export default MainPage;
