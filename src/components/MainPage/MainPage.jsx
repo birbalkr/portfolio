@@ -156,8 +156,8 @@ import { Link } from "react-router-dom";
 const MainPage = () => {
 
     return (
-        <div className="flex items-center justify-center h-screen">
-            <Link to='/about'>About</Link>
+        <div className="flex items-center justify-center h-screen text-8xl">
+            <Link to='/about'>About Me</Link>
         </div>
     );
 };
