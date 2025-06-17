@@ -125,7 +125,7 @@ function About() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl font-bold text-center text-indigo-700 mb-16"
                 >
-                    Recent Projects
+                    Recent Working on Projects
                 </motion.h2>
 
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
