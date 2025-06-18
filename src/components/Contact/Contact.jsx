@@ -13,19 +13,9 @@ function Contact() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        var service_id = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-        var template_id = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
-        var public_id = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
-
-        console.log(service_id);
-        console.log(template_id);
-        console.log(public_id);
-
         const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-        console.log("ENV Values →", SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY); // Confirm they’re correct
 
         emailjs.send(
             SERVICE_ID,
