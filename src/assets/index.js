@@ -12,10 +12,6 @@ export { default as mobile } from './icons/mobile.png';
 export { default as web } from './icons/web.png';
 
 
-// video 
-export { default as movie } from './video/movie.mp4';
-
-
 // ProjectImages
 export { default as bannershap } from './bannershap.webp';
 export { default as JavaScript1 } from './ProjectImage/javascript1.png'
@@ -33,20 +29,12 @@ export { default as port2 } from './ProjectImage/port2.png'
 export { default as port3 } from './ProjectImage/port3.png'
 export { default as port4 } from './ProjectImage/port4.png'
 
-export { default as movie1 } from './ProjectImage/movie1.jpg'
-export { default as movie2 } from './ProjectImage/movie2.jpg'
-export { default as movie3 } from './ProjectImage/movie3.jpg'
-
-
-
-
-
-
-
-
-
-
 
 export { default as project1 } from './project1.jpg';
 export { default as project2 } from './project2.jpg';
 export { default as banner } from './banner.png';
+
+
+// PDF 
+
+export { default as pdfview } from './Cybersecurity_Development_Roadmap.pdf';

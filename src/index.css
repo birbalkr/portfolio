@@ -1,33 +1,33 @@
 @import "tailwindcss";
-
-
-.social-icons{
-    @apply w-14 h-14 pt-3;
-}
-.social-icon{
-    @apply w-full h-10;
-}
-.img-icons{
-    @apply w-20 h-20;
-}
-.bg-img-icon{
-    @apply w-36 h-36 bg-white border border-white rounded-full relative -top-10 -left-8 shadow-2xl;
-
-}
-.bg-project{
-    background-color: #1e293b;
-    @apply max-w-11/12 h-3/6 border border-white shadow-2xl mx-auto rounded-2xl flex;
-
-}
-.bg-project img{
-    @apply w-32 h-32
-}
-.circle{
-    @apply h-14 w-14 rounded-full bg-red-950 ;
-}
-.circle1{
-    @apply h-32 w-32 rounded-full bg-red-950 ;
+body{
+  background: #222222;
+  overflow-x: hidden;
 }
 
 
+@theme {
+  --breakpoint-xs: 40rem;
+}
+@layer components {
+  .btn-primary {
+    border-radius: calc(infinity * 1px);
+    background-color: var(--color-violet-500);
+    padding-inline: --spacing(5);
+    padding-block: --spacing(2);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-violet-700);
+      }
+    }
+  }
+}
 
+.bg-color{
+  background: #333333;
+}
+.heading h1{
+  @apply font-extrabold text-2xl
+}

@@ -18,7 +18,7 @@ export default defineConfig({
                 colors3: '#eb6683',
                 colors4: '#3ea4d9',
                 colors5: '#95cd4e',
-                colors6: '#d876e5',
+                colors6: '#222222',
               },
             },
           },
