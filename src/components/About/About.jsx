@@ -9,7 +9,7 @@ import {
     useState,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { banner, cyber, JavaScript1, project2 } from '../../assets';
+import { api, backend, banner, cyber, devops, JavaScript1, project2, website } from '../../assets';
 import SkillSection from '../Skill/Skills';
 import { projects } from '../../utils/project';
 
@@ -31,65 +31,57 @@ function About() {
             <section>
                 <div className='flex flex-col sm:flex-row  sm:mx-auto sm:w-11/12'>
                     <img src={banner} alt="" className='sm:w-2/4 -z-50 relative ' />
-                    <div className='text-start p-8 bg-secondary-bg text-text sm:h-96 sm:my-40 sm:mr-20 sm:-left-20 relative rounded-2x'>
+                    <div className='text-start p-8 bg-secondary-bg text-text sm:h-96 sm:my-40 sm:mr-20 sm:-left-20 relative rounded-2xl'>
                         <span className='font-light'>Full Stack devloper</span>
                         <h1 className='font-extrabold text-2xl my-2 text-title'>Birbal Kumar</h1>
                         <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
-                        <button className='bg-[#33d46ebd] my-4 mx-2 px-4 py-2 rounded-2xl text-2xl hover:bg-hover'>About</button>
-                        <button className='bg-title my-4 mx-2 px-4 py-2 rounded-2xl text-2xl hover:bg-hover'>Download cv</button>
+                        <button className='hover:bg-[#33d46ebd] my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-[#33d46ebd] border'>About</button>
+                        <button className='hover:bg-title my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-title border'>Download cv</button>
 
                     </div>
                 </div>
             </section>
 
-            <section >
-                <h1 className=''>What I Do</h1>
-                <div className=''></div>
-                <div className=''>
-                    <div className=''>
-                        <svg className='' width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <polyline points="16 18 22 12 16 6" />
-                            <polyline points="8 6 2 12 8 18" />
-                        </svg>
-                        <div className=''>
-                            <h1>Web Design</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum autem ea sed ex, vero corporis, nisi nostrum modi error rem itaque corrupti? Expedita sint perspiciatis ipsum a officia officiis? Sint.</p>
+            <section>
+                <h1 className='text-4xl text-text font-extrabold mx-24'>What I Do</h1>
+
+                <div className='text-text flex justify-center items-center mx-12'>
+                    <div className='m-5'>
+                        <div className='flex m-5'>
+                            <img src={api} alt="api" className='w-14 h-14 mx-3' />
+                            <div className=' '>
+                                <h1 className='text-3xl text-highlight font-bold'>API</h1>
+                                <p className='text-2xl'>Developed and connected RESTful APIs using Spring Boot to handle data flow between frontend and backend in multiple full stack projects</p>
+                            </div>
+                        </div>
+
+                        <div className='flex m-5'>
+                            <img src={backend} alt="img" className='w-14 h-14 mx-3' />
+                            <div className=''>
+                                <h1 className='text-3xl text-highlight font-bold'>BackEnd</h1>
+                                <p className='text-2xl'>Built backend systems using Java and Spring Boot, managing databases with MySQL and writing logic to handle data securely and efficiently.</p>
+                            </div>
                         </div>
                     </div>
-
-                    <div className=''>
-                        <svg className='w-64' width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <circle cx="12" cy="12" r="3" />
-                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.24 1 1.51.26.11.53.17.81.17H21a2 2 0 1 1 0 4h-.09c-.28 0-.55-.06-.81-.17a1.65 1.65 0 0 0-1.51 1z" />
-                        </svg>
-                        <div className=''>
-                            <h1>DevOps</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum autem ea sed ex, vero corporis, nisi nostrum modi error rem itaque corrupti? Expedita sint perspiciatis ipsum a officia officiis? Sint.</p>
+                    <div className='m-5'>
+                        <div className='flex m-5'>
+                            <img src={website} alt="img" className='w-14 h-14 mx-3' />
+                            <div className=''>
+                                <h1 className='text-3xl text-highlight font-bold'>Web Design</h1>
+                                <p className='text-2xl'>Created responsive and user-friendly interfaces using React, styled with Tailwind CSS and Bootstrap to ensure a clean, mobile-ready layout.</p>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className=''>
-                        <svg className='w-64' width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#38bdf8" stroke-width="2"> <rect x="12" y="16" width="40" height="32" rx="4" fill="none" />
-                            <line x1="16" y1="12" x2="16" y2="16" /> <line x1="24" y1="12" x2="24" y2="16" /> <line x1="32" y1="12" x2="32" y2="16" /> <line x1="40" y1="12" x2="40" y2="16" /> <line x1="48" y1="12" x2="48" y2="16" />
-                            <line x1="16" y1="48" x2="16" y2="52" /> <line x1="24" y1="48" x2="24" y2="52" /> <line x1="32" y1="48" x2="32" y2="52" /> <line x1="40" y1="48" x2="40" y2="52" /> <line x1="48" y1="48" x2="48" y2="52" /> <text x="32" y="38" text-anchor="middle" font-family="monospace"
-                                font-size="16" fill="none" stroke="#38bdf8" stroke-width="1">
-                                API
-                            </text>
-                        </svg>
-                        <div className=' '>
-                            <h1>API</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum autem ea sed ex, vero corporis, nisi nostrum modi error rem itaque corrupti? Expedita sint perspiciatis ipsum a officia officiis? Sint.</p>
-                        </div>
-                    </div>
-
-                    <div className=''>
-                        <svg className='w-64' width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"> <rect x="2" y="3" width="20" height="6" rx="2" ry="2" /> <rect x="2" y="9" width="20" height="6" rx="2" ry="2" /> <rect x="2" y="15" width="20" height="6" rx="2" ry="2" />
-                            <path d="M6 6h.01M6 12h.01M6 18h.01" />
-                        </svg>
-                        <div className=''>
-                            <h1>BackEnd</h1>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum autem ea sed ex, vero corporis, nisi nostrum modi error rem itaque corrupti? Expedita sint perspiciatis ipsum a officia officiis? Sint.</p>
+                        <div className='flex m-5'>
+                            <img src={devops} alt="img" className='w-14 h-14 mx-3' />
+                            <div className=''>
+                                <h1 className='text-3xl text-highlight font-bold'>DevOps</h1>
+                                <p className='text-2xl'>Deployed applications using Docker with public images, and used Railway to host full stack apps quickly in real-world deployment scenarios.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </section>
 
             {/* Projects Section */}
@@ -107,22 +99,22 @@ function About() {
                     {projects.Recentprojects.map((project, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-white/40 backdrop-blur-md border border-white/30 rounded-xl p-6 shadow-xl hover:shadow-indigo-300 transition-all"
+                            className="bg-secondary-bg backdrop-blur-md border border-white/30 rounded-xl p-6 transition-all"
                             variants={fadeInUp}
                             initial="hidden"
                             animate="visible"
                             custom={idx}
                             whileHover={{ scale: 1.02 }}
                         >
-                            <h3 className="text-2xl font-semibold text-indigo-800 mb-2">
+                            <h3 className="text-2xl font-semibold text-title  mb-2">
                                 {project.title}
                             </h3>
-                            <p className="text-sm text-gray-700 mb-4">{project.description}</p>
+                            <p className="text-sm text-text mb-4">{project.description}</p>
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {project.tech.map((tech, i) => (
                                     <span
                                         key={i}
-                                        className="bg-indigo-100 text-indigo-800 text-xs px-2 py-1 rounded-md"
+                                        className="bg-accent border-2 text-text border-accent text-sm px-2 py-1 rounded-md"
                                     >
                                         {tech}
                                     </span>
@@ -144,7 +136,7 @@ function About() {
                                         href={project.code}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-gray-800 text-white text-sm px-4 py-1.5 rounded hover:bg-gray-900 transition"
+                                        className="bg-title text-white text-sm px-4 py-1.5 rounded hover:bg-gray-900 transition"
                                     >
                                         Code
                                     </a>

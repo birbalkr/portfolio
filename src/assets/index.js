@@ -1,16 +1,20 @@
 // socal 
-
 export { default as facebook } from './icons/facebook.png';
 export { default as github } from './icons/github.png';
 export { default as instagram } from './icons/instagram.png';
 export { default as linkedin } from './icons/linkedin.svg';
 export { default as whatsapp } from './icons/whatsapp.png';
 export { default as avatar } from './icons/avatar.jpg';
-export { default as api } from './icons/api.png';
 export { default as cyber } from './icons/hacker.png';
 export { default as mobile } from './icons/mobile.png';
 export { default as web } from './icons/web.png';
 
+// icons 
+
+export { default as api } from './icons/api.png'
+export { default as backend } from './icons/backend.png'
+export { default as website } from './icons/devops.png'
+export { default as devops } from './icons/website.png'
 
 // ProjectImages
 export { default as bannershap } from './bannershap.webp';
