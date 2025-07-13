@@ -1,33 +1,32 @@
 @import "tailwindcss";
 body{
-  background: #222222;
   overflow-x: hidden;
+  @apply bg-background;
 }
 
 
 @theme {
   --breakpoint-xs: 40rem;
-}
-@layer components {
-  .btn-primary {
-    border-radius: calc(infinity * 1px);
-    background-color: var(--color-violet-500);
-    padding-inline: --spacing(5);
-    padding-block: --spacing(2);
-    font-weight: var(--font-weight-semibold);
-    color: var(--color-white);
-    box-shadow: var(--shadow-md);
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-violet-700);
-      }
-    }
-  }
+
+  /* Base Colors */
+  --color-background: #000000;     /* Main background */
+  --color-secondary-bg: #0e1014;   /* Section backgrounds */
+  --color-text: #FEFEFE;           /* Regular body text */
+  --color-title: #F35A2B;          /* Headings and name highlight */
+
+  /* UI Colors */
+  --color-primary: #2C6777;        /* Buttons, links */
+  --color-hover: #00293D;          /* Hover effects */
+  --color-accent: #22c55e;         /* Tags, skills, highlights */
+  --color-highlight: #D5700B;      /* Important/emphasis (sparingly used) */
 }
 
-.bg-color{
-  background: #333333;
-}
-.heading h1{
-  @apply font-extrabold text-2xl
-}
+
+
+/* | Role            | Color Name    | Hex       | Tailwind Class   |
+| --------------- | ------------- | --------- | ---------------- |
+| Background      | Dark Navy     | `#0e1014` | `bg-dark`        |
+| Text            | Light Gray    | `#d4d4d8` | `text-base`      |
+| Title/Highlight | Electric Blue | `#3ea4d9` | `text-primary`   |
+| Button          | Neon Green    | `#4ade80` | `bg-accent`      |
+| Button Hover    | Light Teal    | `#5db98d` | `hover:bg-hover` | */

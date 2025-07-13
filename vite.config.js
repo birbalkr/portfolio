@@ -11,16 +11,7 @@ export default defineConfig({
         config: {
           content: ['./src/**/*.{js,jsx,ts,tsx}'],
           theme: {
-            extend: {
-              colors: {
-                colors1: '#e4ab2e',
-                colors2: '#5db98d',
-                colors3: '#eb6683',
-                colors4: '#3ea4d9',
-                colors5: '#95cd4e',
-                colors6: '#222222',
-              },
-            },
+            extend: {},
           },
         },
       }

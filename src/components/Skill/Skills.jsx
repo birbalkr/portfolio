@@ -24,7 +24,7 @@ const SkillBar = ({ name, level }) => (
 
 const SkillSection = () => {
     return (
-        <section className=" py-20 px-4 md:px-8">
+        <section className=" py-20 px-4 md:px-8 ">
             <motion.div
                 className="max-w-6xl mx-auto"
                 initial="hidden"
@@ -71,48 +71,6 @@ const SkillSection = () => {
                                 <p className="text-gray-700 mb-3">{cert.description}</p>
                                 <a href={cert.link} target="_blank" rel="noopener noreferrer" className="text-green-600 font-medium underline text-sm">
                                     View Certificate
-                                </a>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* Labs */}
-                <motion.div variants={fadeInUp} className="mb-20">
-                    <h3 className="text-3xl font-bold text-amber-600 text-center mb-10">Labs</h3>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {skills.labs.map((lab, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-white border-l-4 border-amber-400 p-5 rounded-md shadow-sm hover:shadow-md"
-                                whileHover={{ scale: 1.02 }}
-                            >
-                                <h4 className="text-lg font-semibold text-amber-700 mb-2">{lab.title}</h4>
-                                <p className="text-gray-600 mb-2 text-sm">{lab.description}</p>
-                                <p className="text-sm text-gray-700"><strong>Skills:</strong> {lab.skills.join(', ')}</p>
-                                <a href={lab.link} target="_blank" rel="noopener noreferrer" className="text-amber-600 underline text-sm mt-2 inline-block">
-                                    View Lab
-                                </a>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-
-                {/* CTF Challenges */}
-                <motion.div variants={fadeInUp}>
-                    <h3 className="text-3xl font-bold text-rose-500 text-center mb-10">CTF Challenges</h3>
-                    <div className="grid md:grid-cols-2 gap-8">
-                        {skills.ctf.map((ctf, index) => (
-                            <motion.div
-                                key={index}
-                                className="bg-white border-l-4 border-rose-400 p-5 rounded-md shadow-sm hover:shadow-md"
-                                whileHover={{ scale: 1.02 }}
-                            >
-                                <h4 className="text-lg font-semibold text-rose-600 mb-2">{ctf.title}</h4>
-                                <p className="text-sm text-gray-700 mb-1"><strong>Organizer:</strong> {ctf.organizer}</p>
-                                <p className="text-sm text-gray-700 mb-1"><strong>Skills:</strong> {ctf.skills.join(', ')}</p>
-                                <a href={ctf.link} target="_blank" rel="noopener noreferrer" className="text-rose-600 underline text-sm mt-2 inline-block">
-                                    View CTF
                                 </a>
                             </motion.div>
                         ))}
