@@ -1,10 +1,79 @@
 // src/data/projects.js
 
-import {
-    
-} from "../assets";
+import { JavaScript1, JavaScript2, JavaScript3, JavaScript4 } from "../assets";
+
+
 
 export const projects = {
+    all: [
+        {
+            title: 'Best website collections',
+            category: 'Website',
+            image: JavaScript1, // imported at the top
+        },
+        {
+            title: 'Creative UI designs',
+            category: 'UI/UX',
+            image: JavaScript1, // update this
+        },
+        {
+            title: 'React app showcase',
+            category: 'React',
+            image: JavaScript1,
+        },
+    ],
+    frontend: [
+        {
+            title: 'Best website collections',
+            category: 'Website',
+            image: JavaScript2, // imported at the top
+        },
+        {
+            title: 'Creative UI designs',
+            category: 'UI/UX',
+            image: JavaScript1, // update this
+        },
+        {
+            title: 'React app showcase',
+            category: 'React',
+            image: JavaScript2,
+        },
+    ],
+    backend: [
+        {
+            title: 'Best website collections',
+            category: 'Website',
+            image: JavaScript3, // imported at the top
+        },
+        {
+            title: 'Creative UI designs',
+            category: 'UI/UX',
+            image: JavaScript3, // update this
+        },
+        {
+            title: 'React app showcase',
+            category: 'React',
+            image: JavaScript1,
+        },
+    ],
+    android: [
+        {
+            title: 'Best website collections',
+            category: 'Website',
+            image: JavaScript4, // imported at the top
+        },
+        {
+            title: 'Creative UI designs',
+            category: 'UI/UX',
+            image: JavaScript1, // update this
+        },
+        {
+            title: 'React app showcase',
+            category: 'React',
+            image: JavaScript4,
+        },
+    ],
+    tool: [],
     Recentprojects: [
         {
             title: "devops-docker-k8s-practice",
@@ -15,6 +84,11 @@ export const projects = {
             code: "https://github.com/birbalkr/devops-docker-kubernetes-practice.git",
         },
     ],
+
+}
+
+
+export const projectsww = {
 
     items: [
         {

@@ -1,4 +1,4 @@
-export { default as Sidebar } from './Navbar/Sidebar';
+
 export { default as Header } from './Navbar/Header';
 export { default as Layout } from './Layout';
 export { default as About } from './About/About';

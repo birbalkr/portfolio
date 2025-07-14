@@ -11,7 +11,8 @@ import {
 import { motion, AnimatePresence } from "framer-motion";
 import { api, server, banner, devops, website } from '../../assets';
 import { projects } from '../../utils/project';
-import { CodeBracketIcon, GlobeAltIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
+import { ArrowDownIcon, CodeBracketIcon, GlobeAltIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
+import { skills } from '../../utils/skills';
 
 
 function About() {
@@ -28,15 +29,15 @@ function About() {
     return (
         <>
 
-            <section>
-                <div className='flex flex-col sm:flex-row  sm:mx-auto sm:w-11/12'>
+            <section className='top-32'>
+                <div className='flex flex-col sm:flex-row  sm:mx-auto sm:w-11/12 mt-12'>
                     <img src={banner} alt="" className='sm:w-2/4 -z-50 relative ' />
                     <div className='text-start p-8 bg-secondary-bg text-text sm:h-96 sm:my-40 sm:mr-20 sm:-left-20 relative rounded-2xl'>
                         <span className='font-light'>Full Stack devloper</span>
                         <h1 className='font-extrabold text-2xl my-2 text-title'>Birbal Kumar</h1>
                         <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
                         <button className='hover:bg-[#33d46ebd] my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-[#33d46ebd] border'>About</button>
-                        <button className='hover:bg-title my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-title border'>Download cv</button>
+                        <button className='hover:bg-title my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-title border'>Resume </button>
 
                     </div>
                 </div>
@@ -165,9 +166,9 @@ function About() {
                                 <h3 className="text-xl font-semibold text-blue-600">Languages</h3>
                             </div>
                             <ul className="relative border-l-2 border-blue-600 pl-6 space-y-3">
-                                {["Java", "Python", "JavaScript", "HTML/CSS", "SQL"].map((lang) => (
+                                {skills.languages.map((lang) => (
                                     <li key={lang} className="text-text font-medium">
-                                        {lang}
+                                        {lang.name}
                                     </li>
                                 ))}
                             </ul>
@@ -182,17 +183,9 @@ function About() {
                                 </h3>
                             </div>
                             <ul className="relative border-l-2 border-green-600 pl-6 space-y-3">
-                                {[
-                                    "Spring Boot",
-                                    "React.js",
-                                    "React Native",
-                                    "Bootstrap",
-                                    "Tailwind CSS",
-                                    "Redux",
-                                    "Axios",
-                                ].map((fw) => (
+                                {skills.Frameworks.map((fw) => (
                                     <li key={fw} className="text-text font-medium">
-                                        {fw}
+                                        {fw.name}
                                     </li>
                                 ))}
                             </ul>
