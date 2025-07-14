@@ -9,9 +9,9 @@ import {
     useState,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { api, backend, banner, cyber, devops, JavaScript1, project2, website } from '../../assets';
-import SkillSection from '../Skill/Skills';
+import { api, server, banner, devops, website } from '../../assets';
 import { projects } from '../../utils/project';
+import { CodeBracketIcon, GlobeAltIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
 
 
 function About() {
@@ -56,7 +56,7 @@ function About() {
                         </div>
 
                         <div className='flex m-5'>
-                            <img src={backend} alt="img" className='w-14 h-14 mx-3' />
+                            <img src={server} alt="img" className='w-14 h-14 mx-3' />
                             <div className=''>
                                 <h1 className='text-3xl text-highlight font-bold'>BackEnd</h1>
                                 <p className='text-2xl'>Built backend systems using Java and Spring Boot, managing databases with MySQL and writing logic to handle data securely and efficiently.</p>
@@ -92,7 +92,7 @@ function About() {
                     transition={{ duration: 0.5 }}
                     className="text-4xl font-bold text-center text-indigo-700 mb-16"
                 >
-                    Recent Working on Projects
+                    Recent Projects
                 </motion.h2>
 
                 <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
@@ -147,7 +147,102 @@ function About() {
                 </div>
             </section>
 
-            < SkillSection />
+            {/* skill  */}
+            <section id="skills" className="py-20">
+                <div className="max-w-6xl mx-auto px-6">
+                    <h2 className="text-4xl font-bold text-center text-title mb-4">
+                        Technical Skills
+                    </h2>
+                    <h3 className="text-xl text-center text-text mb-14">
+                        Here are some of the key skills I bring to the table
+                    </h3>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                        {/* Languages */}
+                        <div className="max-w-md mx-auto">
+                            <div className="flex items-center mb-4 space-x-2">
+                                <CodeBracketIcon className="h-6 w-6 text-blue-600" />
+                                <h3 className="text-xl font-semibold text-blue-600">Languages</h3>
+                            </div>
+                            <ul className="relative border-l-2 border-blue-600 pl-6 space-y-3">
+                                {["Java", "Python", "JavaScript", "HTML/CSS", "SQL"].map((lang) => (
+                                    <li key={lang} className="text-text font-medium">
+                                        {lang}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Frameworks & Libraries */}
+                        <div className="max-w-md mx-auto">
+                            <div className="flex items-center mb-4 space-x-2">
+                                <ServerStackIcon className="h-6 w-6 text-green-600" />
+                                <h3 className="text-xl font-semibold text-green-600">
+                                    Frameworks & Libraries
+                                </h3>
+                            </div>
+                            <ul className="relative border-l-2 border-green-600 pl-6 space-y-3">
+                                {[
+                                    "Spring Boot",
+                                    "React.js",
+                                    "React Native",
+                                    "Bootstrap",
+                                    "Tailwind CSS",
+                                    "Redux",
+                                    "Axios",
+                                ].map((fw) => (
+                                    <li key={fw} className="text-text font-medium">
+                                        {fw}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Tools & Platforms */}
+                        <div className="max-w-md mx-auto">
+                            <div className="flex items-center mb-4 space-x-2">
+                                <WrenchScrewdriverIcon className="h-6 w-6 text-purple-600" />
+                                <h3 className="text-xl font-semibold text-purple-600">
+                                    Tools & Platforms
+                                </h3>
+                            </div>
+                            <ul className="relative border-l-2 border-purple-600 pl-6 space-y-3">
+                                {[
+                                    "IntelliJ",
+                                    "Eclipse",
+                                    "PyCharm",
+                                    "Android Studio",
+                                    "Git",
+                                    "AWS",
+                                    "Docker",
+                                    "Railway.app",
+                                ].map((tool) => (
+                                    <li key={tool} className="text-text font-medium">
+                                        {tool}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        {/* Other */}
+                        <div className="max-w-md mx-auto">
+                            <div className="flex items-center mb-4 space-x-2">
+                                <GlobeAltIcon className="h-6 w-6 text-yellow-600" />
+                                <h3 className="text-xl font-semibold text-yellow-600">Other</h3>
+                            </div>
+                            <ul className="relative border-l-2 border-yellow-600 pl-6 space-y-3">
+                                {["RESTful APIs", "RapidAPI", "API Integration & Testing"].map(
+                                    (other) => (
+                                        <li key={other} className="text-text font-medium">
+                                            {other}
+                                        </li>
+                                    )
+                                )}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

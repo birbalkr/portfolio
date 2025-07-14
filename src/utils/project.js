@@ -1,19 +1,7 @@
 // src/data/projects.js
 
 import {
-    crypto1,
-    crypto2,
-    crypto3,
-    JavaScript1,
-    JavaScript2,
-    JavaScript3,
-    JavaScript4,
-    port1,
-    port2,
-    port3,
-    port4,
-    project1,
-    project2,
+    
 } from "../assets";
 
 export const projects = {
@@ -22,7 +10,7 @@ export const projects = {
             title: "devops-docker-k8s-practice",
             description:
                 "A hands-on DevOps learning repository focused on Docker and Kubernetes. Includes containerization examples, orchestration with Kubernetes, and practice projects to build real-world skills.",
-            tech: ["Docker", "Kubernetes", "GitHub Actions", "Shell Scripting"],
+            tech: ["Docker", "Kubernetes", "GitHub Actions"],
             live: "",
             code: "https://github.com/birbalkr/devops-docker-kubernetes-practice.git",
         },
@@ -32,7 +20,7 @@ export const projects = {
         {
             id: "1",
             title: "Own Portfolio",
-            img: port1,
+            // img: port1,
             url: "https://birbalkr.netlify.app/",
             height: 400,
         },
@@ -41,7 +29,7 @@ export const projects = {
             title: "Coinranking",
             description:
                 "Real-time cryptocurrency price tracker with live updates and historical data.",
-            img: crypto1,
+            // img: crypto1,
             github: "https://github.com/birbalkr/Crypto",
             url: "https://rococo-valkyrie-c74458.netlify.app/",
             height: 500,
@@ -50,7 +38,7 @@ export const projects = {
             id: "3",
             title: "Only JavaScript Project",
             description: "Another awesome project description.",
-            img: JavaScript1,
+            // img: JavaScript1,
             // video: '',
             github: "https://github.com/birbalkr/JavaScript",
             url: "https://strong-cat-3df4df.netlify.app/",

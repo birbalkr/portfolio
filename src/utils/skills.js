@@ -1,4 +1,3 @@
-import { cyber } from "../assets";
 
 // skills.js
 export const skills = {
