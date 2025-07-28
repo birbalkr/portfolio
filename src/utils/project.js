@@ -1,5 +1,6 @@
 // src/data/projects.js
 
+import { i } from "motion/react-client";
 import { JavaScript1, JavaScript2, JavaScript3, JavaScript4 } from "../assets";
 
 
@@ -7,16 +8,19 @@ import { JavaScript1, JavaScript2, JavaScript3, JavaScript4 } from "../assets";
 export const projects = {
     all: [
         {
+            id: 1,
             title: 'Best website collections',
             category: 'Website',
             image: JavaScript1, // imported at the top
         },
         {
+            id: 2,
             title: 'Creative UI designs',
             category: 'UI/UX',
             image: JavaScript1, // update this
         },
         {
+            id: 3,
             title: 'React app showcase',
             category: 'React',
             image: JavaScript1,
@@ -24,16 +28,19 @@ export const projects = {
     ],
     frontend: [
         {
+            id: 1,
             title: 'Best website collections',
             category: 'Website',
             image: JavaScript2, // imported at the top
         },
         {
+            id: 2,
             title: 'Creative UI designs',
             category: 'UI/UX',
             image: JavaScript1, // update this
         },
         {
+            id: 3,
             title: 'React app showcase',
             category: 'React',
             image: JavaScript2,
@@ -41,16 +48,19 @@ export const projects = {
     ],
     backend: [
         {
+            id: 1,
             title: 'Best website collections',
             category: 'Website',
             image: JavaScript3, // imported at the top
         },
         {
+            id: 2,
             title: 'Creative UI designs',
             category: 'UI/UX',
             image: JavaScript3, // update this
         },
         {
+            id: 3,
             title: 'React app showcase',
             category: 'React',
             image: JavaScript1,
@@ -58,16 +68,19 @@ export const projects = {
     ],
     android: [
         {
+            id: 1,
             title: 'Best website collections',
             category: 'Website',
             image: JavaScript4, // imported at the top
         },
         {
+            id: 2,
             title: 'Creative UI designs',
             category: 'UI/UX',
             image: JavaScript1, // update this
         },
         {
+            id: 3,
             title: 'React app showcase',
             category: 'React',
             image: JavaScript4,
