@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
 import { About, Contact, Home, Layout, Resume, Project } from './components'
+import ProjectDeltais from './components/Project/ProjectDeltais'
 
 const router = createBrowserRouter([
   {
@@ -13,8 +14,7 @@ const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/project', element: <Project /> },
       { path: '/contact', element: <Contact /> },
-      { path: '/resume', element: <Resume /> },
-
+      { path: '/projectdetails', element: <ProjectDeltais /> },
     ]
   }
 ])

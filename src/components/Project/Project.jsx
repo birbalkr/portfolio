@@ -1,9 +1,14 @@
 import React, { useState } from "react";
 import { projects } from "../../utils/project";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectCarousel() {
     const [activeTab, setActiveTab] = useState("all");
+    const navigate = useNavigate();
 
+    const handleViewDetails = (project) => {
+        navigate(`/projectdetails`, { state: { project } });
+    };
 
     return (
         <>
@@ -71,11 +76,19 @@ export default function ProjectCarousel() {
                                         All Project</h1>
                                     <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
                                         {projects.all.map((project, index) => (
-                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image})` }}>
+                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image[0]})` }}>
                                                 <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
                                                     <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
                                                     </h2>
-                                                    <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">{project.category}</p>
+                                                    <div className="flex justify-around">
+                                                        <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400">Tech: {project.category}</p>
+                                                        <button
+                                                            onClick={() => handleViewDetails(project)}
+                                                            className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 cursor-pointer "
+                                                        >
+                                                            View Details
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))};

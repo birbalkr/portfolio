@@ -1,32 +1,40 @@
-@import "tailwindcss";
+/* @import "tailwindcss";
 body{
   overflow-x: hidden;
   @apply bg-background;
 }
+*/
+
+@import "tailwindcss";
 
 
-@theme {
-  --breakpoint-xs: 40rem;
-
-  /* Base Colors */
-  --color-background: #000000;     /* Main background */
-  --color-secondary-bg: #0e1014;   /* Section backgrounds */
-  --color-text: #FEFEFE;           /* Regular body text */
-  --color-title: #F35A2B;          /* Headings and name highlight */
-
-  /* UI Colors */
-  --color-primary: #2C6777;        /* Buttons, links */
-  --color-hover: #00293D;          /* Hover effects */
-  --color-accent: #22c55e;         /* Tags, skills, highlights */
-  --color-highlight: #D5700B;      /* Important/emphasis (sparingly used) */
+body{
+    @apply bg-mine-shaft-500 text-mine-shaft-50;
+    font-family: poppins, sans-serif;
 }
 
+@theme {
+--color-mine-shaft-50: #f6f6f6;
+--color-mine-shaft-100: #e7e7e7;
+--color-mine-shaft-200: #d1d1d1;
+--color-mine-shaft-300: #b0b0b0;
+--color-mine-shaft-400: #888888;
+--color-mine-shaft-500: #6d6d6d;
+--color-mine-shaft-600: #5d5d5d;
+--color-mine-shaft-700: #4f4f4f;
+--color-mine-shaft-800: #454545;
+--color-mine-shaft-900: #3d3d3d;
+--color-mine-shaft-950: #2d2d2d;
 
-
-/* | Role            | Color Name    | Hex       | Tailwind Class   |
-| --------------- | ------------- | --------- | ---------------- |
-| Background      | Dark Navy     | `#0e1014` | `bg-dark`        |
-| Text            | Light Gray    | `#d4d4d8` | `text-base`      |
-| Title/Highlight | Electric Blue | `#3ea4d9` | `text-primary`   |
-| Button          | Neon Green    | `#4ade80` | `bg-accent`      |
-| Button Hover    | Light Teal    | `#5db98d` | `hover:bg-hover` | */
+--color-bright-sun-50: #fffbeb;
+--color-bright-sun-100: #fff3c6;
+--color-bright-sun-200: #ffe588;
+--color-bright-sun-300: #ffd149;
+--color-bright-sun-400: #ffbd20;
+--color-bright-sun-500: #f99b07;
+--color-bright-sun-600: #dd7302;
+--color-bright-sun-700: #b75006;
+--color-bright-sun-800: #943c0c;
+--color-bright-sun-900: #7a330d;
+--color-bright-sun-950: #461902;
+}

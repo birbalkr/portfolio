@@ -5,12 +5,12 @@ function Header() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur bg-white/30 dark:bg-background/30 shadow">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-transparent">
             <div className="container px-6 py-4 mx-auto">
                 <div className="lg:flex lg:items-center lg:justify-between">
                     <div className="flex items-center justify-between">
                         <Link to="/">
-                            <p className="text-2xl text-title font-extrabold">PortFolio</p>
+                            <p className="text-2xl text-title font-extrabold text-bright-sun-500">PortFolio</p>
                         </Link>
 
                         <div className="flex lg:hidden">

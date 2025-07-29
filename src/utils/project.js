@@ -1,7 +1,8 @@
 // src/data/projects.js
 
 import { i } from "motion/react-client";
-import { JavaScript1, JavaScript2, JavaScript3, JavaScript4 } from "../assets";
+import { JavaScript1, JavaScript2, JavaScript3, JavaScript, javascript0, crypto, crypto1, crypto2, crypto3 } from "../assets";
+import ProjectDeltais from "../components/Project/ProjectDeltais";
 
 
 
@@ -9,22 +10,39 @@ export const projects = {
     all: [
         {
             id: 1,
-            title: 'Best website collections',
-            category: 'Website',
-            image: JavaScript1, // imported at the top
+            title: 'Project Using JavaScript',
+            category: 'JavaScript',
+            image: [javascript0, JavaScript1, JavaScript2, JavaScript3, JavaScript], // imported at the top
+            url: "https://strong-cat-3df4df.netlify.app/",
+            projectDetails: {
+                description: "",
+                techStack: ["JavaScript", "HTML", "CSS"],
+
+            },
+            installation: {
+                clone: "git clone https://github.com/birbalkr/JavaScript.git",
+                changedir: "cd JavaScript",
+                run: "Open the index.html file in your browser to view the project.",
+            },
         },
         {
             id: 2,
-            title: 'Creative UI designs',
-            category: 'UI/UX',
-            image: JavaScript1, // update this
-        },
-        {
-            id: 3,
-            title: 'React app showcase',
+            title: 'Crypto Tracker',
             category: 'React',
-            image: JavaScript1,
-        },
+            image: [crypto, crypto1, crypto2, crypto3], // imported at the top
+            url: "https://rococo-valkyrie-c74458.netlify.app/",
+            projectDetails: {
+                description: "",
+                techStack: ["React", "Tailwind CSS", "Chart.js", "Millify", "Redux", "Ant Design", "Axios"],
+
+            },
+            installation: {
+                clone: "https://github.com/birbalkr/Crypto.git",
+                changedir: "cd Crypto",
+                dependencies: "npm install",
+                run: "npm run dev"
+            },
+        }
     ],
     frontend: [
         {
@@ -71,7 +89,7 @@ export const projects = {
             id: 1,
             title: 'Best website collections',
             category: 'Website',
-            image: JavaScript4, // imported at the top
+            image: JavaScript, // imported at the top
         },
         {
             id: 2,
@@ -83,7 +101,7 @@ export const projects = {
             id: 3,
             title: 'React app showcase',
             category: 'React',
-            image: JavaScript4,
+            image: JavaScript,
         },
     ],
     tool: [],
