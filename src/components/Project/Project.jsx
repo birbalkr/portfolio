@@ -13,18 +13,7 @@ export default function ProjectCarousel() {
     return (
         <>
 
-
-            {/* <section className="bg-background text-text p-10 min-h-16">
-                <h1 className="text-4xl font-bold text-title mb-6">Hi, I’m a Developer</h1>
-                <p className="text-lg mb-8 max-w-xl">
-                    I specialize in building responsive, accessible, and visually engaging web apps.
-                </p>
-                <button className="bg-primary hover:bg-hover text-white px-6 py-3 rounded transition">
-                    View Projects
-                </button>
-            </section> */}
-
-            <section className="py-10 bg-gray-100">
+            <section className="py-10">
                 <div className="mx-auto px-4 mt-12">
                     <h2 className="text-3xl font-bold text-center mb-6">Projects</h2>
 
@@ -68,20 +57,20 @@ export default function ProjectCarousel() {
                         </button>
                     </div>
 
-                    <div className="text-center text-gray-700">
+                    <div className="text-center">
                         {activeTab === "all" && (
-                            <section class="bg-white dark:bg-gray-900">
-                                <div class="container px-6 py-10 mx-auto">
-                                    <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+                            <section>
+                                <div className="container px-6 py-10 mx-auto">
+                                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
                                         All Project</h1>
-                                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+                                    <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
                                         {projects.all.map((project, index) => (
-                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image[0]})` }}>
-                                                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                                                    <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
+                                            <div className="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image[index]})` }}>
+                                                <div className="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                                                    <h2 className="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
                                                     </h2>
                                                     <div className="flex justify-around">
-                                                        <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400">Tech: {project.category}</p>
+                                                        <p className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400">Tech: {project.category}</p>
                                                         <button
                                                             onClick={() => handleViewDetails(project)}
                                                             className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 cursor-pointer "
@@ -97,17 +86,25 @@ export default function ProjectCarousel() {
                             </section>
                         )}
                         {activeTab === "frontend" && (
-                            <section class="bg-white dark:bg-gray-900">
-                                <div class="container px-6 py-10 mx-auto">
-                                    <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-                                        All Project</h1>
-                                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+                            <section>
+                                <div className="container px-6 py-10 mx-auto">
+                                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+                                        Frontend Projects</h1>
+                                    <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
                                         {projects.frontend.map((project, index) => (
-                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image})` }}>
-                                                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                                                    <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
+                                            <div className="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image[index]})` }}>
+                                                <div className="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                                                    <h2 className="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
                                                     </h2>
-                                                    <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">{project.category}</p>
+                                                    <div className="flex justify-around">
+                                                        <p className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400">Tech: {project.category}</p>
+                                                        <button
+                                                            onClick={() => handleViewDetails(project)}
+                                                            className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 cursor-pointer "
+                                                        >
+                                                            View Details
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))};
@@ -116,17 +113,25 @@ export default function ProjectCarousel() {
                             </section>
                         )}
                         {activeTab === "backend" && (
-                            <section class="bg-white dark:bg-gray-900">
-                                <div class="container px-6 py-10 mx-auto">
-                                    <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-                                        All Project</h1>
-                                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+                            <section>
+                                <div className="container px-6 py-10 mx-auto">
+                                    <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+                                        Backend Projects</h1>
+                                    <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
                                         {projects.backend.map((project, index) => (
-                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image})` }}>
-                                                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                                                    <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
+                                            <div className="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image[index]})` }}>
+                                                <div className="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                                                    <h2 className="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
                                                     </h2>
-                                                    <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">{project.category}</p>
+                                                    <div className="flex justify-around">
+                                                        <p className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400">Tech: {project.category}</p>
+                                                        <button
+                                                            onClick={() => handleViewDetails(project)}
+                                                            className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 cursor-pointer "
+                                                        >
+                                                            View Details
+                                                        </button>
+                                                    </div>
                                                 </div>
                                             </div>
                                         ))};
@@ -135,23 +140,24 @@ export default function ProjectCarousel() {
                             </section>
                         )}
                         {activeTab === "tools" && (
-                            <section class="bg-white dark:bg-gray-900">
-                                <div class="container px-6 py-10 mx-auto">
-                                    <h1 class="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
-                                        All Project</h1>
-                                    <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
-                                        {projects.android.map((project, index) => (
-                                            <div class="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image})` }}>
-                                                <div class="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
-                                                    <h2 class="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
-                                                    </h2>
-                                                    <p class="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">{project.category}</p>
-                                                </div>
-                                            </div>
-                                        ))};
-                                    </div>
-                                </div>
-                            </section>
+                            // <section>
+                            //     <div className="container px-6 py-10 mx-auto">
+                            //         <h1 className="text-2xl font-semibold text-center text-gray-800 capitalize lg:text-3xl dark:text-white">
+                            //             All Project</h1>
+                            //         <div className="grid grid-cols-1 gap-8 mt-8 xl:mt-12 xl:gap-12 lg:grid-cols-2">
+                            //             {projects.android.map((project, index) => (
+                            //                 <div className="flex items-end overflow-hidden bg-cover rounded-lg h-96" style={{ backgroundImage: `url(${project.image})` }}>
+                            //                     <div className="w-full px-8 py-4 overflow-hidden rounded-b-lg backdrop-blur-sm bg-white/60 dark:bg-gray-800/60">
+                            //                         <h2 className="mt-4 text-xl font-semibold text-gray-800 capitalize dark:text-white">{project.title}
+                            //                         </h2>
+                            //                         <p className="mt-2 text-lg tracking-wider text-blue-500 uppercase dark:text-blue-400 ">{project.category}</p>
+                            //                     </div>
+                            //                 </div>
+                            //             ))};
+                            //         </div>
+                            //     </div>
+                            // </section>
+                            null
                         )}
                     </div>
                 </div>

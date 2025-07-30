@@ -1,9 +1,5 @@
 // src/data/projects.js
-
-import { i } from "motion/react-client";
-import { JavaScript1, JavaScript2, JavaScript3, JavaScript, javascript0, crypto, crypto1, crypto2, crypto3 } from "../assets";
-import ProjectDeltais from "../components/Project/ProjectDeltais";
-
+import { JavaScript1, JavaScript2, JavaScript3, JavaScript, javascript0, crypto, crypto1, crypto2, crypto3, gemini, gemini1, gemini2, gemini3 } from "../assets";
 
 
 export const projects = {
@@ -15,14 +11,16 @@ export const projects = {
             image: [javascript0, JavaScript1, JavaScript2, JavaScript3, JavaScript], // imported at the top
             url: "https://strong-cat-3df4df.netlify.app/",
             projectDetails: {
-                description: "",
+                description: "This project includes small, interactive web features built with JavaScript, HTML, and CSS. It demonstrates basic concepts like DOM manipulation and event handling. Perfect for beginners to explore how JavaScript works in the browser.",
                 techStack: ["JavaScript", "HTML", "CSS"],
 
             },
             installation: {
-                clone: "git clone https://github.com/birbalkr/JavaScript.git",
-                changedir: "cd JavaScript",
-                run: "Open the index.html file in your browser to view the project.",
+                frontend: {
+                    clone: "git clone https://github.com/birbalkr/JavaScript.git",
+                    changedir: "cd JavaScript",
+                    run: "Open the index.html file in your browser to view the project."
+                }
             },
         },
         {
@@ -32,57 +30,140 @@ export const projects = {
             image: [crypto, crypto1, crypto2, crypto3], // imported at the top
             url: "https://rococo-valkyrie-c74458.netlify.app/",
             projectDetails: {
-                description: "",
+                description:
+                    "A real-time cryptocurrency price tracker that provides live updates, historical data, and detailed information about various cryptocurrencies. Built with React, this project showcases the use of APIs to fetch and display dynamic data.",
                 techStack: ["React", "Tailwind CSS", "Chart.js", "Millify", "Redux", "Ant Design", "Axios"],
 
             },
             installation: {
-                clone: "https://github.com/birbalkr/Crypto.git",
-                changedir: "cd Crypto",
-                dependencies: "npm install",
-                run: "npm run dev"
+                frontend: {
+                    clone: "https://github.com/birbalkr/Crypto.git",
+                    changedir: "cd Crypto",
+                    dependencies: "npm install",
+                    run: "npm run dev"
+                }
+            },
+        },
+        {
+            id: 3,
+            title: 'Chat bot using Gemini AI',
+            category: 'Full-Stack',
+            image: [gemini, gemini1, gemini2, gemini3],
+            url: "https://rococo-valkyrie-c74458.netlify.app/",
+            projectDetails: {
+                description:
+                    "A chatbot application that leverages the Gemini AI API to provide intelligent responses and insights. Built with a React frontend and a Node.js/Express backend, the app features real-time messaging, user authentication, and a responsive design.",
+                techStack: [
+                    "React",
+                    "Tailwind CSS",
+                    "Axios",
+                    "Spring Boot",
+                    "Gemini AI API",
+                    "REST API"
+                ]
+            },
+            installation: {
+                frontend: {
+                    clone: "https://github.com/birbalkr/Chat-bot.git",
+                    changedir: "cd gemini-chat-frontend",
+                    dependencies: "npm install",
+                    run: "npm run dev"
+                },
+                backend: {
+                    backend_clone: "https://github.com/birbalkr/Chat-bot.git",
+                    backend_changedir: "cd gemini-chat",
+                    backend_dependencies: "./mvnw clean install",
+                    backend_run: "./mvnw spring-boot:run",
+                    backend_envSetup: "Add your Gemini API key to the `/application.properties` file as GEMINI_API_KEY=your_api_key"
+                },
+                Docker: {
+                    docker_clone: "docker pull codeadmin870/chat-bot:02",
+                    docker_run: "docker run -p 8080:8080 codeadmin870/chat-bot:02",
+                }
             },
         }
     ],
     frontend: [
         {
             id: 1,
-            title: 'Best website collections',
-            category: 'Website',
-            image: JavaScript2, // imported at the top
+            title: 'Project Using JavaScript',
+            category: 'JavaScript',
+            image: [javascript0, JavaScript1, JavaScript2, JavaScript3, JavaScript], // imported at the top
+            url: "https://strong-cat-3df4df.netlify.app/",
+            projectDetails: {
+                description: "This project includes small, interactive web features built with JavaScript, HTML, and CSS. It demonstrates basic concepts like DOM manipulation and event handling. Perfect for beginners to explore how JavaScript works in the browser.",
+                techStack: ["JavaScript", "HTML", "CSS"],
+
+            },
+            installation: {
+                frontend: {
+                    clone: "git clone https://github.com/birbalkr/JavaScript.git",
+                    changedir: "cd JavaScript",
+                    run: "Open the index.html file in your browser to view the project."
+                }
+            },
         },
         {
             id: 2,
-            title: 'Creative UI designs',
-            category: 'UI/UX',
-            image: JavaScript1, // update this
-        },
-        {
-            id: 3,
-            title: 'React app showcase',
+            title: 'Crypto Tracker',
             category: 'React',
-            image: JavaScript2,
+            image: [crypto, crypto1, crypto2, crypto3], // imported at the top
+            url: "https://rococo-valkyrie-c74458.netlify.app/",
+            projectDetails: {
+                description:
+                    "A real-time cryptocurrency price tracker that provides live updates, historical data, and detailed information about various cryptocurrencies. Built with React, this project showcases the use of APIs to fetch and display dynamic data.",
+                techStack: ["React", "Tailwind CSS", "Chart.js", "Millify", "Redux", "Ant Design", "Axios"],
+
+            },
+            installation: {
+                frontend: {
+                    clone: "https://github.com/birbalkr/Crypto.git",
+                    changedir: "cd Crypto",
+                    dependencies: "npm install",
+                    run: "npm run dev"
+                }
+            },
         },
     ],
     backend: [
         {
-            id: 1,
-            title: 'Best website collections',
-            category: 'Website',
-            image: JavaScript3, // imported at the top
-        },
-        {
-            id: 2,
-            title: 'Creative UI designs',
-            category: 'UI/UX',
-            image: JavaScript3, // update this
-        },
-        {
             id: 3,
-            title: 'React app showcase',
-            category: 'React',
-            image: JavaScript1,
-        },
+            title: 'Chat bot using Gemini AI',
+            category: 'Full-Stack',
+            image: [gemini, gemini1, gemini2, gemini3],
+            url: "https://rococo-valkyrie-c74458.netlify.app/",
+            projectDetails: {
+                description:
+                    "A chatbot application that leverages the Gemini AI API to provide intelligent responses and insights. Built with a React frontend and a Node.js/Express backend, the app features real-time messaging, user authentication, and a responsive design.",
+                techStack: [
+                    "React",
+                    "Tailwind CSS",
+                    "Axios",
+                    "Spring Boot",
+                    "Gemini AI API",
+                    "REST API"
+                ]
+            },
+            installation: {
+                frontend: {
+                    clone: "https://github.com/birbalkr/Chat-bot.git",
+                    changedir: "cd gemini-chat-frontend",
+                    dependencies: "npm install",
+                    run: "npm run dev"
+                },
+                backend: {
+                    backend_clone: "https://github.com/birbalkr/Chat-bot.git",
+                    backend_changedir: "cd gemini-chat",
+                    backend_dependencies: "./mvnw clean install",
+                    backend_run: "./mvnw spring-boot:run",
+                    backend_envSetup: "Add your Gemini API key to the `/application.properties` file as GEMINI_API_KEY=your_api_key"
+                },
+                Docker: {
+                    docker_clone: "docker pull codeadmin870/chat-bot:02",
+                    docker_run: "docker run -p 8080:8080 codeadmin870/chat-bot:02",
+                }
+            },
+        }
     ],
     android: [
         {
@@ -119,54 +200,54 @@ export const projects = {
 }
 
 
-export const projectsww = {
+// export const projectsww = {
 
-    items: [
-        {
-            id: "1",
-            title: "Own Portfolio",
-            // img: port1,
-            url: "https://birbalkr.netlify.app/",
-            height: 400,
-        },
-        {
-            id: "2",
-            title: "Coinranking",
-            description:
-                "Real-time cryptocurrency price tracker with live updates and historical data.",
-            // img: crypto1,
-            github: "https://github.com/birbalkr/Crypto",
-            url: "https://rococo-valkyrie-c74458.netlify.app/",
-            height: 500,
-        },
-        {
-            id: "3",
-            title: "Only JavaScript Project",
-            description: "Another awesome project description.",
-            // img: JavaScript1,
-            // video: '',
-            github: "https://github.com/birbalkr/JavaScript",
-            url: "https://strong-cat-3df4df.netlify.app/",
-            height: 550,
-        },
+//     items: [
+//         {
+//             id: "1",
+//             title: "Own Portfolio",
+//             // img: port1,
+//             url: "https://birbalkr.netlify.app/",
+//             height: 400,
+//         },
+//         {
+//             id: "2",
+//             title: "Coinranking",
+//             description:
+//                 "Real-time cryptocurrency price tracker with live updates and historical data.",
+//             // img: crypto1,
+//             github: "https://github.com/birbalkr/Crypto",
+//             url: "https://rococo-valkyrie-c74458.netlify.app/",
+//             height: 500,
+//         },
+//         {
+//             id: "3",
+//             title: "Only JavaScript Project",
+//             description: "Another awesome project description.",
+//             // img: JavaScript1,
+//             // video: '',
+//             github: "https://github.com/birbalkr/JavaScript",
+//             url: "https://strong-cat-3df4df.netlify.app/",
+//             height: 550,
+//         },
 
 
-        // {
-        //     title: "React-Native-Development & Roadmap",
-        //     description: "Another awesome project description.",
-        //     img: [project2, project1, mobile],
-        //     video: movie,
-        //     github: "https://github.com/birbalkr/React-Native-Development-Roadmap",
-        // },
-        // {
-        //     title: " Full-Stack-Development & Roadmap",
-        //     description: "Another awesome project description.",
-        //     img: [project2, project1, mobile],
-        //     video: movie,
-        //     github: "https://github.com/birbalkr/Full-Stack-Development-Roadmap",
-        // }
-    ],
-};
+//         // {
+//         //     title: "React-Native-Development & Roadmap",
+//         //     description: "Another awesome project description.",
+//         //     img: [project2, project1, mobile],
+//         //     video: movie,
+//         //     github: "https://github.com/birbalkr/React-Native-Development-Roadmap",
+//         // },
+//         // {
+//         //     title: " Full-Stack-Development & Roadmap",
+//         //     description: "Another awesome project description.",
+//         //     img: [project2, project1, mobile],
+//         //     video: movie,
+//         //     github: "https://github.com/birbalkr/Full-Stack-Development-Roadmap",
+//         // }
+//     ],
+// };
 
 // list
 

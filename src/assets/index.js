@@ -20,7 +20,7 @@ export { default as js } from './js.png';
 export { default as python } from './pyrhon.png';
 export { default as react } from './react.png';
 export { default as spring } from './spring.png';
-export { default as postgresql } from './postgresql.png';
+export { default as postgresql } from './postgre.png';
 export { default as mysql } from './mysql.png';
 export { default as git } from './git.png';
 export { default as docker } from './docker.png';
@@ -44,6 +44,12 @@ export { default as crypto } from './ProjectImage/crypto/crypto.png'
 export { default as crypto1 } from './ProjectImage/crypto/crypto1.png'
 export { default as crypto2 } from './ProjectImage/crypto/crypto2.png'
 export { default as crypto3 } from './ProjectImage/crypto/crypto3.png'
+// Chat bot using Gemini AI
+export { default as gemini } from './ProjectImage/gemini/ai.png'
+export { default as gemini1 } from './ProjectImage/gemini/ai1.png'
+export { default as gemini2 } from './ProjectImage/gemini/ai2.png'
+export { default as gemini3 } from './ProjectImage/gemini/ai3.png'
+export { default as gemini4 } from './ProjectImage/gemini/ai4.png'
 
 
 

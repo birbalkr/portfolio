@@ -1,5 +1,7 @@
+import { b } from 'motion/react-client';
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { docker } from '../../assets';
 
 function ProjectDetailsPage() {
     const { state } = useLocation();
@@ -12,7 +14,9 @@ function ProjectDetailsPage() {
 
     const { title, url, image, projectDetails, installation } = project;
     const { description, techStack } = projectDetails;
-    const { clone, changedir, run, dependencies } = installation;
+    const { clone, changedir, run, dependencies } = installation.frontend || {};
+    const { backend_clone, backend_changedir, backend_dependencies, backend_run, backend_envSetup } = installation.backend || {};
+    const { docker_clone, docker_run } = installation.Docker || {};
 
     const openZoom = (img) => setZoomedImage(img);
     const closeZoom = () => setZoomedImage(null);
@@ -59,7 +63,64 @@ function ProjectDetailsPage() {
                     )}
                     <li>Run the development server: <code className="bg-gray-100 px-2 py-1 rounded">{run}</code></li>
                 </ol>
+                {/* Backend Installation if available */}
+                {installation.backend ? (
+                    <div className="mt-4">
+                        <h3 className="text-xl font-semibold text-black">Backend Installation</h3>
+                        <ol className="list-decimal list-inside text-gray-800 space-y-2">
+                            <li>Clone the backend repository: <code className="bg-gray-100 px-2 py-1 rounded">{backend_clone}</code></li>
+                            <li>Navigate to the backend directory: <code className="bg-gray-100 px-2 py-1 rounded">{backend_changedir}</code></li>
+                            <li>Install backend dependencies: <code className="bg-gray-100 px-2 py-1 rounded">{backend_dependencies}</code></li>
+                            <li>Run the backend server: <code className="bg-gray-100 px-2 py-1 rounded">{backend_run}</code></li>
+                            {backend_envSetup && (
+                                <li>Environment setup: <span className="text-red-500">{backend_envSetup}</span></li>
+                            )}
+                        </ol>
+                    </div>
+                ) : null}
+                {installation.Docker ? (
+                    <div className="mt-4">
+                        <h3 className="text-xl font-semibold text-black">Docker Installation</h3>
+                        <ol className="list-decimal list-inside text-gray-800 space-y-2">
+                            <li>Pull the Docker image: <code className="bg-gray-100 px-2 py-1 rounded">{docker_clone}</code></li>
+                            <li>Run the Docker container: <code className="bg-gray-100 px-2 py-1 rounded">{docker_run}</code></li>
+                        </ol>
+                    </div>
+                ) : null}
             </div>
+            {/* Installation Details */}
+            {/* <div className="bg-white p-6 rounded shadow-md mt-6">
+                <h2 className="text-2xl font-semibold mb-4 text-black">Installation Details</h2>
+                <ol className="list-decimal list-inside text-gray-800 space-y-2">
+                    <li>Clone the repository: <code className="bg-gray-100 px-2 py-1 rounded">{clone}</code></li>
+                    <li>Navigate to the project directory: <code className="bg-gray-100 px-2 py-1 rounded">{changedir}</code></li>
+                    <li>Install dependencies: <code className="bg-gray-100 px-2 py-1 rounded">{dependencies}</code></li>
+                    <li>Run the development server: <code className="bg-gray-100 px-2 py-1 rounded">{run}</code></li>
+                </ol>   
+                {backend_clone && (
+                    <div className="mt-4">
+                            <h3 className="text-xl font-semibold text-black">Backend Installation</h3>
+                            <ol className="list-decimal list-inside text-gray-800 space-y-2">
+                                <li>Clone the backend repository: <code className="bg-gray-100 px-2 py-1 rounded">{backend_clone}</code></li>
+                                <li>Navigate to the backend directory: <code className="bg-gray-100 px-2 py-1 rounded">{backend_changedir}</code></li>
+                                <li>Install backend dependencies: <code className="bg-gray-100 px-2 py-1 rounded">{backend_dependencies}</code></li>
+                                <li>Run the backend server: <code className="bg-gray-100 px-2 py-1 rounded">{backend_run}</code></li>
+                                {backend_envSetup && (
+                                    <li>Environment setup: <span className="text-red-500">{backend_envSetup}</span></li>
+                                )}
+                            </ol>
+                        </div>
+                    )}
+                {docker_clone && (
+                    <div className="mt-4">
+                        <h3 className="text-xl font-semibold text-black">Docker Installation</h3>
+                        <ol className="list-decimal list-inside text-gray-800 space-y-2">
+                            <li>Pull the Docker image: <code className="bg-gray-100 px-2 py-1 rounded">{docker_clone}</code></li>
+                            <li>Run the Docker container: <code className="bg-gray-100 px-2 py-1 rounded">{docker_run}</code></li>
+                        </ol>
+                    </div>
+                )}
+            </div> */}
 
             {/* Additional Project Images */}
             <div className="bg-white p-6 rounded shadow-md m-3">

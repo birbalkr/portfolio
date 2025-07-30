@@ -9,7 +9,7 @@ body{
 
 
 body{
-    @apply bg-mine-shaft-500 text-mine-shaft-50;
+    @apply bg-mine-shaft-900 text-mine-shaft-50;
     font-family: poppins, sans-serif;
 }
 

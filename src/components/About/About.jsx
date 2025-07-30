@@ -1,9 +1,9 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import { api, server, banner, devops, website, bannershapwebp, banner1 } from '../../assets';
+import { api, server, banner, devops, website, bannershapwebp, banner1, JAVA, js, react, spring, postgresql, mysql, docker, kubernetes, git } from '../../assets';
 import { projects } from '../../utils/project';
-import {  CodeBracketIcon, GlobeAltIcon, LanguageIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
+import { CodeBracketIcon, GlobeAltIcon, LanguageIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
 import { skills } from '../../utils/skills';
 // import { ArrowLeftOnRectangleIcon } from '@heroicons/react/24/solid';
 
@@ -21,12 +21,11 @@ function About() {
 
     return (
         <>
-            <img src={bannershapwebp} alt="" className='absolute -z-50 right-0 top-0 w-1/2 h-44'/>
+            <img src={bannershapwebp} alt="" className='absolute -z-50 right-0 top-0 w-1/2 h-44' />
             <section className='top-32'>
-                <div className='flex flex-col sm:flex-row  sm:mx-auto sm:w-11/12 mt-12'>
-                    <img src={banner} alt="" className='sm:w-2/4 -z-50 relative ' />
-                    {/* <img src={banner1} alt="" /> */}
-                    <div className='text-start p-8 bg-mine-shaft-700 text-text sm:h-96 sm:my-40 sm:mr-20 sm:-left-20 relative rounded-2xl'>
+                <div className='flex flex-row  mx-auto w-11/12 mt-12'>
+                    <img src={banner} alt="" className='w-2/4 -z-50 relative  rounded-3xl bg-transparent ' />
+                    <div className='text-start p-8 bg-transparent my-52 mr-20 -left-44 border border-bright-sun-600 relative rounded-2xl backdrop-blur-md drop-shadow-lg'>
                         <span className='font-light text-mine-shaft-300'>Full Stack Developer</span>
                         <h1 className='font-extrabold text-4xl my-2 text-bright-sun-400'>Birbal Kumar</h1>
                         <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
@@ -39,45 +38,36 @@ function About() {
             {/* What i do  */}
 
             <section>
-                <h1 className='text-4xl text-text font-extrabold mx-24 text-bright-sun-400'>What I Do</h1>
+                <div className='max-w-full'>
+                    <h1 className='text-4xl text-center font-extrabold mx-24 text-bright-sun-400'>What I Do</h1>
 
-                <div className='text-text flex justify-center items-center mx-12'>
-                    <div className='m-5'>
-                        <div className='flex m-5'>
-                            <img src={api} alt="api" className='w-14 h-14 mx-3' />
-                            <div className=' '>
-                                <h1 className='text-3xl text-highlight font-bold'>API</h1>
-                                <p className='text-2xl'>Developed and connected RESTful APIs using Spring Boot to handle data flow between frontend and backend in multiple full stack projects</p>
-                            </div>
+                    <div className='flex justify-between mx-24 my-12'>
+                        <div className='flex flex-col items-center'>
+                            <img src={api} alt="" className='w-20 h-20' />
+                            <h2 className='text-2xl font-bold text-text'>API Development</h2>
+                            <p className='text-lg text-text'>Design and implement RESTful APIs using Spring Boot and Node.js.</p>
                         </div>
-
-                        <div className='flex m-5'>
-                            <img src={server} alt="img" className='w-14 h-14 mx-3' />
-                            <div className=''>
-                                <h1 className='text-3xl text-highlight font-bold'>BackEnd</h1>
-                                <p className='text-2xl'>Built backend systems using Java and Spring Boot, managing databases with MySQL and writing logic to handle data securely and efficiently.</p>
-                            </div>
+                        <div className='flex flex-col items-center'>
+                            <img src={server} alt="" className='w-20 h-20' />
+                            <h2 className='text-2xl font-bold text-text'>Android Development</h2>
+                            <p className='text-lg text-text'>Deploy and manage applications on cloud platforms like AWS and Railway.</p>
                         </div>
                     </div>
-                    <div className='m-5'>
-                        <div className='flex m-5'>
-                            <img src={website} alt="img" className='w-14 h-14 mx-3' />
-                            <div className=''>
-                                <h1 className='text-3xl text-highlight font-bold'>Web Design</h1>
-                                <p className='text-2xl'>Created responsive and user-friendly interfaces using React, styled with Tailwind CSS and Bootstrap to ensure a clean, mobile-ready layout.</p>
-                            </div>
-                        </div>
 
-                        <div className='flex m-5'>
-                            <img src={devops} alt="img" className='w-14 h-14 mx-3' />
-                            <div className=''>
-                                <h1 className='text-3xl text-highlight font-bold'>DevOps</h1>
-                                <p className='text-2xl'>Deployed applications using Docker with public images, and used Railway to host full stack apps quickly in real-world deployment scenarios.</p>
-                            </div>
+                    <div className='flex justify-between mx-24 my-12'>
+                        <div className='flex flex-col items-center'>
+                            <img src={website} alt="" className='w-20 h-20' />
+                            <h2 className='text-2xl font-bold text-text'>Web Development</h2>
+                            <p className='text-lg text-text'>Build responsive and interactive web applications using React.js and Tailwind CSS.</p>
+                        </div>
+                        <div className='flex flex-col items-center'>
+                            <img src={devops} alt="" className='w-20 h-20' />
+                            <h2 className='text-2xl font-bold text-text'>DevOps Practices</h2>
+                            <p className='text-lg text-text'>Implement CI/CD pipelines and containerization using Docker and Kubernetes.</p>
                         </div>
                     </div>
+
                 </div>
-
             </section>
 
             {/* Projects Section */}
@@ -87,31 +77,31 @@ function About() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-4xl font-bold text-center text-indigo-700 mb-16"
+                    className="text-4xl font-bold text-center text-bright-sun-600 mb-16 underline decoration-bright-sun-600 underline-offset-22"
                 >
                     Recent Projects
                 </motion.h2>
 
-                <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
+                <div className="grid gap-10 grid-cols-3 max-w-7xl mx-auto">
                     {projects.Recentprojects.map((project, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-secondary-bg backdrop-blur-md border border-white/30 rounded-xl p-6 transition-all"
+                            className="bg-secondary-bg backdrop-blur-md border border-bright-sun-400 rounded-xl p-6 transition-all"
                             variants={fadeInUp}
                             initial="hidden"
                             animate="visible"
                             custom={idx}
                             whileHover={{ scale: 1.02 }}
                         >
-                            <h3 className="text-2xl font-semibold text-title  mb-2">
+                            <h3 className="text-2xl font-semibold text-bright-sun-400  mb-2">
                                 {project.title}
                             </h3>
-                            <p className="text-sm text-text mb-4">{project.description}</p>
+                            <p className="text-sm  mb-4">{project.description}</p>
                             <div className="flex flex-wrap gap-2 mb-4">
                                 {project.tech.map((tech, i) => (
                                     <span
                                         key={i}
-                                        className="bg-accent border-2 text-text border-accent text-sm px-2 py-1 rounded-md"
+                                        className=" border text-bright-sun-50 border-bright-sun-700 hover:bg-bright-sun-700 text-sm px-2 py-1 rounded-md"
                                     >
                                         {tech}
                                     </span>
@@ -133,7 +123,7 @@ function About() {
                                         href={project.code}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-title text-white text-sm px-4 py-1.5 rounded hover:bg-gray-900 transition"
+                                        className="bg-bright-sun-600 text-white text-sm px-4 py-1.5 rounded hover:bg-bright-sun-700 transition"
                                     >
                                         Code
                                     </a>
@@ -148,30 +138,31 @@ function About() {
 
             <section id="skills" className="py-20">
                 <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-center text-title mb-4">
-                        Technical Skills
+                    <h2 className="text-4xl font-bold text-center text-title mb-16 text-bright-sun-600 underline decoration-bright-sun-600 underline-offset-22"
+                    >
+                        Skills
                     </h2>
                     <h3 className="text-xl text-center text-text mb-14">
                         Here are some of the key skills I bring to the table
                     </h3>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-                        {/* Languages */}
+
                         <div className="max-w-md mx-auto">
                             <div className="flex items-center mb-4 space-x-2">
                                 <CodeBracketIcon className="h-6 w-6 text-blue-600" />
                                 <h3 className="text-xl font-semibold text-blue-600">Languages</h3>
                             </div>
                             <ul className="relative border-l-2 border-blue-600 pl-6 space-y-3">
-                                {skills.languages.map((lang) => (
-                                    <li key={lang} className="text-text font-medium">
+                                {skills.languages.map((lang, index) => (
+                                    <li key={`${lang}-${index}`} className="text-text font-medium">
                                         {lang.name}
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        {/* Frameworks & Libraries */}
+
                         <div className="max-w-md mx-auto">
                             <div className="flex items-center mb-4 space-x-2">
                                 <ServerStackIcon className="h-6 w-6 text-green-600" />
@@ -180,15 +171,15 @@ function About() {
                                 </h3>
                             </div>
                             <ul className="relative border-l-2 border-green-600 pl-6 space-y-3">
-                                {skills.Frameworks.map((fw) => (
-                                    <li key={fw} className="text-text font-medium">
+                                {skills.Frameworks.map((fw, index) => (
+                                    <li key={`${fw}-${index}`} className="text-text font-medium">
                                         {fw.name}
                                     </li>
                                 ))}
                             </ul>
                         </div>
 
-                        {/* Tools & Platforms */}
+
                         <div className="max-w-md mx-auto">
                             <div className="flex items-center mb-4 space-x-2">
                                 <WrenchScrewdriverIcon className="h-6 w-6 text-purple-600" />
@@ -206,15 +197,13 @@ function About() {
                                     "AWS",
                                     "Docker",
                                     "Railway.app",
-                                ].map((tool) => (
-                                    <li key={tool} className="text-text font-medium">
+                                ].map((tool, index) => (
+                                    <li key={`${tool}-${index}`} className="text-text font-medium">
                                         {tool}
                                     </li>
                                 ))}
                             </ul>
                         </div>
-
-                        {/* Other */}
                         <div className="max-w-md mx-auto">
                             <div className="flex items-center mb-4 space-x-2">
                                 <GlobeAltIcon className="h-6 w-6 text-yellow-600" />
@@ -222,8 +211,8 @@ function About() {
                             </div>
                             <ul className="relative border-l-2 border-yellow-600 pl-6 space-y-3">
                                 {["RESTful APIs", "RapidAPI", "API Integration & Testing"].map(
-                                    (other) => (
-                                        <li key={other} className="text-text font-medium">
+                                    (other, index) => (
+                                        <li key={`${other}-${index}`} className="text-text font-medium">
                                             {other}
                                         </li>
                                     )
@@ -233,6 +222,8 @@ function About() {
                     </div>
                 </div>
             </section>
+
+
         </>
     )
 }
