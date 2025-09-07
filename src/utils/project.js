@@ -185,7 +185,6 @@ export const projects = {
             image: JavaScript,
         },
     ],
-    tool: [],
     Recentprojects: [
         {
             title: "devops-docker-k8s-practice",
@@ -195,67 +194,14 @@ export const projects = {
             live: "",
             code: "https://github.com/birbalkr/devops-docker-kubernetes-practice.git",
         },
+        {
+            title: "Learn Android App Fullstack with Kotlin, Jetpack Compose, Firebase & Spring Boot",
+            description:
+                "A complete guide to building Android applications from scratch. Covers fundamentals to advanced concepts with practical projects, Jetpack Compose UI, Firebase integration, and Spring Boot backend.",
+            tech: ["Android", "Kotlin", "Java", "Jetpack Compose", "Firebase", "Spring Boot"],
+            live: "",
+            code: "https://github.com/birbalkr/Learn-Android",
+        },
     ],
 
 }
-
-
-// export const projectsww = {
-
-//     items: [
-//         {
-//             id: "1",
-//             title: "Own Portfolio",
-//             // img: port1,
-//             url: "https://birbalkr.netlify.app/",
-//             height: 400,
-//         },
-//         {
-//             id: "2",
-//             title: "Coinranking",
-//             description:
-//                 "Real-time cryptocurrency price tracker with live updates and historical data.",
-//             // img: crypto1,
-//             github: "https://github.com/birbalkr/Crypto",
-//             url: "https://rococo-valkyrie-c74458.netlify.app/",
-//             height: 500,
-//         },
-//         {
-//             id: "3",
-//             title: "Only JavaScript Project",
-//             description: "Another awesome project description.",
-//             // img: JavaScript1,
-//             // video: '',
-//             github: "https://github.com/birbalkr/JavaScript",
-//             url: "https://strong-cat-3df4df.netlify.app/",
-//             height: 550,
-//         },
-
-
-//         // {
-//         //     title: "React-Native-Development & Roadmap",
-//         //     description: "Another awesome project description.",
-//         //     img: [project2, project1, mobile],
-//         //     video: movie,
-//         //     github: "https://github.com/birbalkr/React-Native-Development-Roadmap",
-//         // },
-//         // {
-//         //     title: " Full-Stack-Development & Roadmap",
-//         //     description: "Another awesome project description.",
-//         //     img: [project2, project1, mobile],
-//         //     video: movie,
-//         //     github: "https://github.com/birbalkr/Full-Stack-Development-Roadmap",
-//         // }
-//     ],
-// };
-
-// list
-
-// 1. Movies-App
-// 2. Crypto
-// 3.Project-3D
-// 4.Shopping-Online
-// 5. apiforflutter
-// 6.Flutter-App
-// 7.Android-App-with-Kotlin
-// 8.Android-App

@@ -20,7 +20,7 @@ export default function ProjectCarousel() {
 
                     <div className="flex justify-center space-x-4 mb-6">
                         <button
-                            onClick={() => setActiveTab("all")}
+                            onClick={() => setActiveTab("All")}
                             className={`px-4 py-2 rounded ${activeTab === "all"
                                 ? "bg-blue-500 text-white"
                                 : "bg-white text-gray-700 shadow"
@@ -29,8 +29,8 @@ export default function ProjectCarousel() {
                             All
                         </button>
                         <button
-                            onClick={() => setActiveTab("frontend")}
-                            className={`px-4 py-2 rounded ${activeTab === "frontend"
+                            onClick={() => setActiveTab("Frontend")}
+                            className={`px-4 py-2 rounded ${activeTab === "Frontend"
                                 ? "bg-blue-500 text-white"
                                 : "bg-white text-gray-700 shadow"
                                 }`}
@@ -38,8 +38,8 @@ export default function ProjectCarousel() {
                             Frontend
                         </button>
                         <button
-                            onClick={() => setActiveTab("backend")}
-                            className={`px-4 py-2 rounded ${activeTab === "backend"
+                            onClick={() => setActiveTab("Backend")}
+                            className={`px-4 py-2 rounded ${activeTab === "Backend"
                                 ? "bg-blue-500 text-white"
                                 : "bg-white text-gray-700 shadow"
                                 }`}
@@ -47,7 +47,7 @@ export default function ProjectCarousel() {
                             Backend
                         </button>
                         <button
-                            onClick={() => setActiveTab("tools")}
+                            onClick={() => setActiveTab("Android")}
                             className={`px-4 py-2 rounded ${activeTab === "tools"
                                 ? "bg-blue-500 text-white"
                                 : "bg-white text-gray-700 shadow"
