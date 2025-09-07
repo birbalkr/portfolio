@@ -195,13 +195,14 @@ export const projects = {
             code: "https://github.com/birbalkr/devops-docker-kubernetes-practice.git",
         },
         {
-            title: "Learn Android App Fullstack with Kotlin, Jetpack Compose, Firebase & Spring Boot",
+            title: "Android Fullstack",
             description:
                 "A complete guide to building Android applications from scratch. Covers fundamentals to advanced concepts with practical projects, Jetpack Compose UI, Firebase integration, and Spring Boot backend.",
             tech: ["Android", "Kotlin", "Java", "Jetpack Compose", "Firebase", "Spring Boot"],
             live: "",
-            code: "https://github.com/birbalkr/Learn-Android",
+            code: "https://github.com/birbalkr/learn-android-app-development.git",
         },
+
     ],
 
 }
