@@ -8,51 +8,99 @@ import {
     useState,
 } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { banner } from '../../assets';
+import { banner, docker, downloads, email, github, linkedin, location, mysql, react, spring, whatsapp } from '../../assets';
 // import RotatingText from './RotatingText'
 
 
 function Home() {
     return (
-        <section className='overflow-x-hidden'>
-            <h1 className='top-8'>Portfolio Birbal Kumar</h1>
+        <section>
+            <div className='flex md:flex-row mt-13'>
 
-            <div className='flex flex-col sm:flex-row'>
-
-                <div className='flex-1 border-red-300 border-4'>
-                    <h1 className='font-extrabold text-2xl'>Hello,</h1>
-                    <p className='font-bold text-3xl'>I'am Birbal Kumar</p>
-                </div>
-
-                {/* <div className='flex-1 border-amber-600 border-4'>
-                    <div className='items-center'>
-                        <h3 className='text-2xl font-mono'>Hello, <br />I'm Birbal Kumar</h3>
-                        <span>Working on
-                            <div className='max-w-fit'>
-                                <RotatingText
-                                    texts={['React', 'Spring Boot', 'Taillwind CSS', 'SQL', 'GitHub']}
-                                    mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                                    staggerFrom={"last"}
-                                    initial={{ y: "100%" }}
-                                    animate={{ y: 0 }}
-                                    exit={{ y: "-120%" }}
-                                    staggerDuration={0.025}
-                                    splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                                    transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                                    rotationInterval={2000}
-                                />
-                            </div>
-                        </span>
+                <div className='md:w-8/12 sm:w-8/12'>
+                    <div className='text-4xl font-bold m-2'>Birbal kumar</div>
+                    <div className='font-light m-2'>FullStack Web dev</div>
+                    <div className='flex m-2 mt-5 imageemaillocation'>
+                        <img src={email} alt="" />
+                        <div>birbalkr1435@gmail.com</div>
+                        <img src={location} alt="" className='ml-3' />
+                        <div>Gaya Bihar India</div>
                     </div>
-                </div> */}
+                    <div className='m-2 mt-5 '>
+                        <p>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
+                    </div>
 
-                <div className='flex-1'>
-                    <img src={banner} alt="img" />
+                    <div className='flex'>
+                        <div className='imageemaillocation text-black flex items-center bg-white rounded-lg p-2 mr-5 hover:bg-gray-600 cursor-pointer'>
+                            <img src={downloads} alt="download" className='w-6 h-6 mr-1' />
+                            <p>Resume</p>
+                        </div>
+                        <div className='flex imageborder'>
+                            <img src={github} alt="" className='w-10 h-10 mr-4' />
+                            <img src={linkedin} alt="" className='w-10 h-10 mr-4' />
+                            <img src={whatsapp} alt="" className='w-10 h-10 mr-4' />
+                        </div>
+                    </div>
                 </div>
+
+                <div className='md:w-1/3 sm:w1/3 ml-6 hidden sm:flex md:flex flex-col gap-5'>
+                    <div className='codeimage flex gap-5'>
+                        <img src={spring} alt="" className='mt-12' />
+                        <img src={react} alt="" className='mt-4' />
+
+                        <div className='absolute hidden md:block'>
+                            <div className='absolute -ml-14 -mt-4 border-1 p-2 rounded-2xl'>Spring Boot</div>
+                            <div className='ml-72 -mt-12 border-1 p-2 rounded-2xl'>React js</div>
+
+                        </div>
+
+                    </div>
+                    <div className='codeimage flex gap-5'>
+                        <img src={mysql} alt="" className='mt-4' />
+                        <img src={docker} alt="" className='mt-4' />
+
+                        <div className='absolute hidden md:block'>
+                            <div className='absolute mt-48 -ml-14 border-1 p-2 rounded-2xl'>Mysql DB</div>
+                            <div className='mt-24 ml-90 border-1 p-2 rounded-2xl'>Tailwind Css</div>
+                        </div>
+                    </div>
+                    {/* <img src="" alt="" />
+                    <img src="" alt="" /> */}
+                </div>
+
             </div>
         </section>
     )
 }
+
+
+{/* <RotatingText
+                            texts={['React', 'Spring Boot', 'Taillwind CSS', 'SQL', 'GitHub']}
+                            mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-120%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            rotationInterval={2000}
+                        />
+                    </div>
+                </div>
+                <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
+
+
+<img src={spring} alt="" className='z-50 absolute -mt-75 ml-10 w-20 h-20'/> 
+                    /* <img src={react} alt="" className='img -mt-75 ml-80 absolute w-15 h-15'/>
+                    <img src={mysql} alt="" className='img -mt-15 ml-80 absolute w-25 h-25'/>
+                    <img src={postgresql} alt="" className='img -mt-10 ml-100 absolute w-20 h-20'/>
+                    <img src={jetpack} alt="" className='img mt-75 ml-90 absolute w-20 h-20'/>
+                    <img src={kotlin} alt="" className='img mt-75 ml-70 absolute w-15 h-15'/>
+                    <img src={docker} alt="" className='img mt-75 ml-10 absolute w-20 h-20'/>
+                    <img src={kubernetes} alt="" className='img mt-3 ml-32 absolute w-15 h-15'/> */}
+
+
 
 function cn(...classes) {
     return classes.filter(Boolean).join(" ");

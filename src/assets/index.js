@@ -11,20 +11,24 @@ export { default as linkedin } from './icons/linkedin.svg';
 export { default as server } from './icons/server.png'
 export { default as devops } from './icons/website.png'
 export { default as whatsapp } from './icons/whatsapp.png';
+export { default as location } from './icons/location.png';
+export { default as email } from './icons/message.png';
+export { default as downloads } from './icons/downloads.png';
+
 
 
 // LanguageIcon
 
-export { default as JAVA } from './java.png';
-export { default as js } from './js.png';
-export { default as python } from './pyrhon.png';
-export { default as react } from './react.png';
 export { default as spring } from './spring.png';
-export { default as postgresql } from './postgre.png';
+export { default as react } from './react.png';
 export { default as mysql } from './mysql.png';
-export { default as git } from './git.png';
+export { default as postgresql } from './postgre.png';
+export { default as kotlin } from './kotlin.png';
+export { default as jetpack } from './jetpack.png';
 export { default as docker } from './docker.png';
 export { default as kubernetes } from './k8s.png';
+export { default as git } from './git.png';
+// export { default as java } from './java..png';
 // export { default as postman } from './postman.png';
 // export { default as tailwind } from './tailwind.png';
 // export { default as linux } from './linux.png';

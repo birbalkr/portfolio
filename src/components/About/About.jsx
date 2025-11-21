@@ -1,7 +1,7 @@
 
 import React from 'react'
 import { motion, AnimatePresence } from "framer-motion";
-import { api, server, banner, devops, website, bannershapwebp, banner1, JAVA, js, react, spring, postgresql, mysql, docker, kubernetes, git } from '../../assets';
+import { api, server, banner, devops, website, bannershapwebp } from '../../assets';
 import { projects } from '../../utils/project';
 import { CodeBracketIcon, GlobeAltIcon, LanguageIcon, ServerStackIcon, WrenchScrewdriverIcon } from '@heroicons/react/16/solid';
 import { skills } from '../../utils/skills';
