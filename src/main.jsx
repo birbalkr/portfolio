@@ -2,19 +2,20 @@ import React, { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './index.css'
-import {  About, Contact, Layout, Project } from './components'
+import {  About, Contact, Home, Layout, Project } from './components'
 import ProjectDeltais from './components/Project/ProjectDeltais'
+import MainPage from './components/MainPage'
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />, // Contains Navbar, Footer, and nested pages
     children: [
-      // { path: '/', element: <About /> },
-      // { path: '/about', element: <About /> },
-      // { path: '/project', element: <Project /> },
-      // { path: '/contact', element: <Contact /> },
-      // { path: '/projectdetails', element: <ProjectDeltais /> },
+      { path: '/', element: <MainPage /> },
+      { path: '/about', element: <About /> },
+      { path: '/project', element: <Project /> },
+      { path: '/contact', element: <Contact /> },
+      { path: '/projectdetails', element: <ProjectDeltais /> },
     ]
   }
 ])

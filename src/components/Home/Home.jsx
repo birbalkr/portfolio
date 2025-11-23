@@ -1,7 +1,7 @@
 import React from "react";
-import { docker, downloads, email, gfg, git, github, linkedin, location, mysql, react, spring, tailwind, whatsapp } from "../../assets";
+import { docker, downloads, email, github, linkedin, location, mysql, react, spring, tailwind, whatsapp } from "../../assets";
 import RotatingText from "../Anim/RotatingText";
-import About from "../About/About";
+import { Link } from "react-router-dom";
 
 function Home() {
     return (
@@ -61,12 +61,15 @@ function Home() {
                             <div>Resume</div>
                         </div>
 
-                        <div className="px-2 py-3 rounded-2xl flex imageborder  gap-2">
-                            <img src={github} alt="Github" />
-                            <img src={linkedin} alt="Linkedin" />
-                            <img src={whatsapp} alt="whatsapp" />
-                            <img src={gfg} alt="gfg" />
-                            <img src={docker} alt="docker" />
+                        <div className="items-center rounded-2xl flex gap-2">
+                            <Link to="https://github.com/birbalkr"><img src={github} alt="Github" className="w-10 h-10" /></Link>
+                            <Link to="https://www.linkedin.com/in/birbal-kumar-697381260/"><img src={linkedin} alt="Linkedin" className="w-10 h-10"/></Link>
+                            <Link to="https://github.com/birbalkr"><img src={whatsapp} alt="whatsapp" className="w-10 h-10" /></Link>
+                            <Link to="https://hub.docker.com/repositories/codeadmin870"><img src={docker} alt="docker" className="w-18 h-18 -ml-2" /></Link>
+                            
+                            
+                            
+                            
                         </div>
                     </div>
                 </div>

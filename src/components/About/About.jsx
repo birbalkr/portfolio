@@ -19,98 +19,143 @@ function About() {
         }),
     };
 
+    const items = [
+        {
+            img: api,
+            title: "API Development",
+            desc: "Design and implement RESTful APIs using Spring Boot and Node.js.",
+        },
+        {
+            img: server,
+            title: "Android Development",
+            desc: "Build and deploy Android applications using modern frameworks.",
+        },
+        {
+            img: website,
+            title: "Web Development",
+            desc: "Build responsive and interactive web applications using React.js and Tailwind CSS.",
+        },
+        {
+            img: devops,
+            title: "DevOps Practices",
+            desc: "Implement CI/CD pipelines and automation with Docker and Kubernetes.",
+        },
+    ];
+
     return (
         <>
 
             {/* What i do  */}
-            {/* 
-            <section>
-                <div className='max-w-full'>
-                    <h1 className='text-4xl text-center font-extrabold mx-24 text-bright-sun-400'>What I Do</h1>
 
-                    <div className='flex justify-between mx-24 my-12'>
-                        <div className='flex flex-col items-center'>
-                            <img src={api} alt="" className='w-20 h-20' />
-                            <h2 className='text-2xl font-bold text-text'>API Development</h2>
-                            <p className='text-lg text-text'>Design and implement RESTful APIs using Spring Boot and Node.js.</p>
-                        </div>
-                        <div className='flex flex-col items-center'>
-                            <img src={server} alt="" className='w-20 h-20' />
-                            <h2 className='text-2xl font-bold text-text'>Android Development</h2>
-                            <p className='text-lg text-text'>Deploy and manage applications on cloud platforms like AWS and Railway.</p>
-                        </div>
-                    </div>
+            <section className="py-20 relative overflow-hidden">
 
-                    <div className='flex justify-between mx-24 my-12'>
-                        <div className='flex flex-col items-center'>
-                            <img src={website} alt="" className='w-20 h-20' />
-                            <h2 className='text-2xl font-bold text-text'>Web Development</h2>
-                            <p className='text-lg text-text'>Build responsive and interactive web applications using React.js and Tailwind CSS.</p>
-                        </div>
-                        <div className='flex flex-col items-center'>
-                            <img src={devops} alt="" className='w-20 h-20' />
-                            <h2 className='text-2xl font-bold text-text'>DevOps Practices</h2>
-                            <p className='text-lg text-text'>Implement CI/CD pipelines and containerization using Docker and Kubernetes.</p>
-                        </div>
-                    </div>
+                {/* Blurred Background Elements */}
+                {/* <div className="absolute top-10 left-10 w-72 h-72  rounded-full blur-3xl" />
+            <div className="absolute bottom-10 right-10 w-72 h-72  rounded-full blur-3xl" /> */}
+
+                <h1 className="text-center text-3xl font-extrabold text-bright-sun-400 mb-10">
+                    Skills & Services
+                </h1>
+
+
+                {/* Modern Masonry-Style Grid */}
+                <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 px-6">
+
+                    {items.map((item, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, scale: 0.85, y: 60 }}
+                            whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: i * 0.15, type: "spring" }}
+                            className={`
+                            p-8 rounded-3xl backdrop-blur-xl border border-white/10 shadow-2xl
+                            bg-gradient-to-br ${item.color}
+                            hover:shadow-yellow-300/30 hover:-translate-y-2 transition-all duration-300
+                        `}
+                        >
+                            <div className="flex flex-col items-center text-center space-y-4">
+                                <img src={item.img} alt="" className="w-20 h-20 drop-shadow-xl" />
+                                <h2 className="text-2xl font-bold text-white">{item.title}</h2>
+                                <p className="text-gray-300 text-lg">{item.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
 
                 </div>
-            </section> */}
+
+            </section>
 
             {/* Projects Section */}
 
-            {/* <section className="py-20 px-4">
-                <motion.h2
+            <section className="py-20 px-4">
+
+                {/* Modern Minimal Heading */}
+                <motion.div
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-4xl font-bold text-center text-bright-sun-600 mb-16 underline decoration-bright-sun-600 underline-offset-22"
+                    className="text-center mb-16"
                 >
-                    Recent Projects
-                </motion.h2>
+                    <p className="text-bright-sun-500 text-sm tracking-widest uppercase mb-2">
+                        Projects
+                    </p>
+                    <h2 className="text-4xl font-extrabold text-white">
+                        My Latest Work
+                    </h2>
+                </motion.div>
 
-                <div className="grid gap-10 grid-cols-3 max-w-7xl mx-auto">
+                <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
                     {projects.Recentprojects.map((project, idx) => (
                         <motion.div
                             key={idx}
-                            className="bg-secondary-bg backdrop-blur-md border border-bright-sun-400 rounded-xl p-6 transition-all"
+                            className="bg-neutral-900/40 backdrop-blur-xl border border-bright-sun-500/30 rounded-2xl p-6 
+                shadow-[0_0_20px_rgba(255,199,0,0.15)] hover:shadow-[0_0_25px_rgba(255,199,0,0.35)]
+                transition-all duration-300"
                             variants={fadeInUp}
                             initial="hidden"
                             animate="visible"
                             custom={idx}
-                            whileHover={{ scale: 1.02 }}
+                            whileHover={{ scale: 1.03 }}
                         >
-                            <h3 className="text-2xl font-semibold text-bright-sun-400  mb-2">
+                            <h3 className="text-2xl font-semibold text-bright-sun-400 mb-3">
                                 {project.title}
                             </h3>
-                            <p className="text-sm  mb-4">{project.description}</p>
-                            <div className="flex flex-wrap gap-2 mb-4">
+
+                            <p className="text-base text-gray-300 mb-4">
+                                {project.description}
+                            </p>
+
+                            <div className="flex flex-wrap gap-2 mb-5">
                                 {project.tech.map((tech, i) => (
                                     <span
                                         key={i}
-                                        className=" border text-bright-sun-50 border-bright-sun-700 hover:bg-bright-sun-700 text-sm px-2 py-1 rounded-md"
+                                        className="px-3 py-1 text-sm border border-bright-sun-600 text-bright-sun-50
+                            rounded-md bg-neutral-800 hover:bg-bright-sun-600 hover:text-black transition"
                                     >
                                         {tech}
                                     </span>
                                 ))}
                             </div>
+
                             <div className="flex gap-3">
                                 {project.live && (
                                     <a
                                         href={project.live}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-green-600 text-white text-sm px-4 py-1.5 rounded hover:bg-green-700 transition"
+                                        className="bg-green-600 text-white text-sm px-4 py-1.5 rounded-lg hover:bg-green-700 transition"
                                     >
                                         Live
                                     </a>
                                 )}
+
                                 {project.code && (
                                     <a
                                         href={project.code}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="bg-bright-sun-600 text-white text-sm px-4 py-1.5 rounded hover:bg-bright-sun-700 transition"
+                                        className="bg-bright-sun-600 text-black font-semibold text-sm px-4 py-1.5 
+                            rounded-lg hover:bg-bright-sun-700 transition"
                                     >
                                         Code
                                     </a>
@@ -119,96 +164,8 @@ function About() {
                         </motion.div>
                     ))}
                 </div>
-            </section> */}
+            </section>
 
-            {/* skill  */}
-
-            {/* <section id="skills" className="py-20">
-                <div className="max-w-6xl mx-auto px-6">
-                    <h2 className="text-4xl font-bold text-center text-title mb-16 text-bright-sun-600 underline decoration-bright-sun-600 underline-offset-22"
-                    >
-                        Skills
-                    </h2>
-                    <h3 className="text-xl text-center text-text mb-14">
-                        Here are some of the key skills I bring to the table
-                    </h3>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-
-                        <div className="max-w-md mx-auto">
-                            <div className="flex items-center mb-4 space-x-2">
-                                <CodeBracketIcon className="h-6 w-6 text-blue-600" />
-                                <h3 className="text-xl font-semibold text-blue-600">Languages</h3>
-                            </div>
-                            <ul className="relative border-l-2 border-blue-600 pl-6 space-y-3">
-                                {skills.languages.map((lang, index) => (
-                                    <li key={`${lang}-${index}`} className="text-text font-medium">
-                                        {lang.name}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-
-                        <div className="max-w-md mx-auto">
-                            <div className="flex items-center mb-4 space-x-2">
-                                <ServerStackIcon className="h-6 w-6 text-green-600" />
-                                <h3 className="text-xl font-semibold text-green-600">
-                                    Frameworks & Libraries
-                                </h3>
-                            </div>
-                            <ul className="relative border-l-2 border-green-600 pl-6 space-y-3">
-                                {skills.Frameworks.map((fw, index) => (
-                                    <li key={`${fw}-${index}`} className="text-text font-medium">
-                                        {fw.name}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-
-                        <div className="max-w-md mx-auto">
-                            <div className="flex items-center mb-4 space-x-2">
-                                <WrenchScrewdriverIcon className="h-6 w-6 text-purple-600" />
-                                <h3 className="text-xl font-semibold text-purple-600">
-                                    Tools & Platforms
-                                </h3>
-                            </div>
-                            <ul className="relative border-l-2 border-purple-600 pl-6 space-y-3">
-                                {[
-                                    "IntelliJ",
-                                    "Eclipse",
-                                    "PyCharm",
-                                    "Android Studio",
-                                    "Git",
-                                    "AWS",
-                                    "Docker",
-                                    "Railway.app",
-                                ].map((tool, index) => (
-                                    <li key={`${tool}-${index}`} className="text-text font-medium">
-                                        {tool}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                        <div className="max-w-md mx-auto">
-                            <div className="flex items-center mb-4 space-x-2">
-                                <GlobeAltIcon className="h-6 w-6 text-yellow-600" />
-                                <h3 className="text-xl font-semibold text-yellow-600">Other</h3>
-                            </div>
-                            <ul className="relative border-l-2 border-yellow-600 pl-6 space-y-3">
-                                {["RESTful APIs", "RapidAPI", "API Integration & Testing"].map(
-                                    (other, index) => (
-                                        <li key={`${other}-${index}`} className="text-text font-medium">
-                                            {other}
-                                        </li>
-                                    )
-                                )}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section> */}
 
 
         </>

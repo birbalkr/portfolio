@@ -10,10 +10,8 @@ function Layout() {
 
         <div className="">
             <Header />
-            <Home/>
-            <About/>
-            {/* <Outlet /> */}
-            {/* <Footer /> */}
+            <Outlet />
+            <Footer />
         </div>
 
     );
