@@ -1,310 +1,117 @@
-import React from 'react'
-import {
-    forwardRef,
-    useCallback,
-    useEffect,
-    useImperativeHandle,
-    useMemo,
-    useState,
-} from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { banner, docker, downloads, email, github, linkedin, location, mysql, react, spring, whatsapp } from '../../assets';
-// import RotatingText from './RotatingText'
-
+import React from "react";
+import { docker, downloads, email, gfg, git, github, linkedin, location, mysql, react, spring, tailwind, whatsapp } from "../../assets";
+import RotatingText from "../Anim/RotatingText";
+import About from "../About/About";
 
 function Home() {
     return (
-        <section>
-            <div className='flex md:flex-row mt-13'>
+        <section className="mt-20 w-full">
+            <div className="w-11/12 mx-auto flex flex-col sm:flex-row ">
 
-                <div className='md:w-8/12 sm:w-8/12'>
-                    <div className='text-4xl font-bold m-2'>Birbal kumar</div>
-                    <div className='font-light m-2'>FullStack Web dev</div>
-                    <div className='flex m-2 mt-5 imageemaillocation'>
-                        <img src={email} alt="" />
-                        <div>birbalkr1435@gmail.com</div>
-                        <img src={location} alt="" className='ml-3' />
-                        <div>Gaya Bihar India</div>
-                    </div>
-                    <div className='m-2 mt-5 '>
-                        <p>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
-                    </div>
+                <div className="w-full lg:w-8/12">
 
-                    <div className='flex'>
-                        <div className='imageemaillocation text-black flex items-center bg-white rounded-lg p-2 mr-5 hover:bg-gray-600 cursor-pointer'>
-                            <img src={downloads} alt="download" className='w-6 h-6 mr-1' />
-                            <p>Resume</p>
+                    {/* Name + Rotating Text */}
+
+                    <div className="flex items-start sm:items-center gap-5">
+                        <div className="text-4xl md:text-5xl font-extrabold text-bright-sun-400">
+                            Birbal Kumar
                         </div>
-                        <div className='flex imageborder'>
-                            <img src={github} alt="" className='w-10 h-10 mr-4' />
-                            <img src={linkedin} alt="" className='w-10 h-10 mr-4' />
-                            <img src={whatsapp} alt="" className='w-10 h-10 mr-4' />
+
+                        {/* Removed RotatingText - added simple rotating text placeholder */}
+                        <div className="mt-3">
+                            <RotatingText
+                                texts={[
+                                    "React JS",
+                                    "Spring Boot",
+                                    "Tailwind CSS",
+                                    "Docker",
+                                    "GitHub"
+                                ]}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Subtitle */}
+                    <div className="font-light text-lg md:text-xl mt-3 text-mine-shaft-300">
+                        FullStack Web Developer
+                    </div>
+
+
+                    {/* Email + Location */}
+                    <div className="flex flex-wrap items-center gap-3 mt-5">
+                        <img src={email} alt="email" className="w-6" />
+                        <span>birbalkr1435@gmail.com</span>
+
+                        <img src={location} alt="location" className="w-6 ml-4" />
+                        <span>Gaya, Bihar, India</span>
+                    </div>
+
+                    {/* Paragraph */}
+                    <p className="mt-5 text-lg md:text-2xl leading-relaxed font-medium">
+                        Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.
+                    </p>
+
+                    {/* Buttons */}
+
+                    <div className="flex flex-col sm:flex-row gap-4 mt-6">
+
+                        <div className="hover:bg-bright-sun-500 px-3 my-2 rounded-2xl flex
+                            text-xl border border-bright-sun-500 justify-center items-center gap-3">
+                                <img src={downloads} alt="" className="w-8 h-8 " />
+                            <div>Resume</div>
+                        </div>
+
+                        <div className="px-2 py-3 rounded-2xl flex imageborder  gap-2">
+                            <img src={github} alt="Github" />
+                            <img src={linkedin} alt="Linkedin" />
+                            <img src={whatsapp} alt="whatsapp" />
+                            <img src={gfg} alt="gfg" />
+                            <img src={docker} alt="docker" />
                         </div>
                     </div>
                 </div>
 
-                <div className='md:w-1/3 sm:w1/3 ml-6 hidden sm:flex md:flex flex-col gap-5'>
-                    <div className='codeimage flex gap-5'>
-                        <img src={spring} alt="" className='mt-12' />
-                        <img src={react} alt="" className='mt-4' />
+                {/* RIGHT SIDE - TECH IMAGES (HIDDEN ON MOBILE) */}
+                <div className="lg:flex w-4/12 md:w-1/3 sm:w1/3 ml-6 hidden sm:flex md:flex flex-col gap-5 ">
 
-                        <div className='absolute hidden md:block'>
-                            <div className='absolute -ml-14 -mt-4 border-1 p-2 rounded-2xl'>Spring Boot</div>
-                            <div className='ml-72 -mt-12 border-1 p-2 rounded-2xl'>React js</div>
+                    {/* Row 1 */}
+                    <div className="relative flex gap-5 codeimage">
+                        {/* <img src={spring} alt="spring" className="w-28" />
+                        <img src={react} alt="react" className="w-28" /> */}
+                        <img src={spring} alt="" className="mt-12" />
+                        <img src={react} alt="" className="mt-4" />
 
-                        </div>
-
-                    </div>
-                    <div className='codeimage flex gap-5'>
-                        <img src={mysql} alt="" className='mt-4' />
-                        <img src={docker} alt="" className='mt-4' />
-
-                        <div className='absolute hidden md:block'>
-                            <div className='absolute mt-48 -ml-14 border-1 p-2 rounded-2xl'>Mysql DB</div>
-                            <div className='mt-24 ml-90 border-1 p-2 rounded-2xl'>Tailwind Css</div>
+                        <div className="absolute hidden lg:flex">
+                            <div className="absolute border-1 p-2 rounded-2xl -ml-10">
+                                Spring Boot
+                            </div>
+                            <div className="ml-40 lg:ml-52 -mt-10 border-1 p-2 rounded-2xl">
+                                React JS
+                            </div>
                         </div>
                     </div>
-                    {/* <img src="" alt="" />
-                    <img src="" alt="" /> */}
+
+                    {/* Row 2 */}
+                    <div className="relative flex gap-5 codeimage">
+
+                        <img src={mysql} alt="" className="mt-4" />
+                        <img src={tailwind} alt="" className="-mt-4" />
+
+
+                        <div className="absolute hidden lg:flex">
+                            <div className="absolute border-1 p-2 rounded-2xl mt-30 -ml-10 lg:mt-36">
+                                MySQL DB
+                            </div>
+                            <div className="border-1 p-2 rounded-2xl ml-36 mt-25 lg:mt-28 lg:ml-44">
+                                Tailwind CSS
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
-
             </div>
         </section>
-    )
+    );
 }
 
-
-{/* <RotatingText
-                            texts={['React', 'Spring Boot', 'Taillwind CSS', 'SQL', 'GitHub']}
-                            mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                            staggerFrom={"last"}
-                            initial={{ y: "100%" }}
-                            animate={{ y: 0 }}
-                            exit={{ y: "-120%" }}
-                            staggerDuration={0.025}
-                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                            rotationInterval={2000}
-                        />
-                    </div>
-                </div>
-                <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
-
-
-<img src={spring} alt="" className='z-50 absolute -mt-75 ml-10 w-20 h-20'/> 
-                    /* <img src={react} alt="" className='img -mt-75 ml-80 absolute w-15 h-15'/>
-                    <img src={mysql} alt="" className='img -mt-15 ml-80 absolute w-25 h-25'/>
-                    <img src={postgresql} alt="" className='img -mt-10 ml-100 absolute w-20 h-20'/>
-                    <img src={jetpack} alt="" className='img mt-75 ml-90 absolute w-20 h-20'/>
-                    <img src={kotlin} alt="" className='img mt-75 ml-70 absolute w-15 h-15'/>
-                    <img src={docker} alt="" className='img mt-75 ml-10 absolute w-20 h-20'/>
-                    <img src={kubernetes} alt="" className='img mt-3 ml-32 absolute w-15 h-15'/> */}
-
-
-
-function cn(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
-const RotatingText = forwardRef((props, ref) => {
-    const {
-        texts,
-        transition = { type: "spring", damping: 25, stiffness: 300 },
-        initial = { y: "100%", opacity: 0 },
-        animate = { y: 0, opacity: 1 },
-        exit = { y: "-120%", opacity: 0 },
-        animatePresenceMode = "wait",
-        animatePresenceInitial = false,
-        rotationInterval = 2000,
-        staggerDuration = 0,
-        staggerFrom = "first",
-        loop = true,
-        auto = true,
-        splitBy = "characters",
-        onNext,
-        mainClassName,
-        splitLevelClassName,
-        elementLevelClassName,
-        ...rest
-    } = props;
-
-    const [currentTextIndex, setCurrentTextIndex] = useState(0);
-
-    const splitIntoCharacters = (text) => {
-        if (typeof Intl !== "undefined" && Intl.Segmenter) {
-            const segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
-            return Array.from(segmenter.segment(text), (segment) => segment.segment);
-        }
-        return Array.from(text);
-    };
-
-    const elements = useMemo(() => {
-        const currentText = texts[currentTextIndex];
-        if (splitBy === "characters") {
-            const words = currentText.split(" ");
-            return words.map((word, i) => ({
-                characters: splitIntoCharacters(word),
-                needsSpace: i !== words.length - 1,
-            }));
-        }
-        if (splitBy === "words") {
-            return currentText.split(" ").map((word, i, arr) => ({
-                characters: [word],
-                needsSpace: i !== arr.length - 1,
-            }));
-        }
-        if (splitBy === "lines") {
-            return currentText.split("\n").map((line, i, arr) => ({
-                characters: [line],
-                needsSpace: i !== arr.length - 1,
-            }));
-        }
-
-        return currentText.split(splitBy).map((part, i, arr) => ({
-            characters: [part],
-            needsSpace: i !== arr.length - 1,
-        }));
-    }, [texts, currentTextIndex, splitBy]);
-
-    const getStaggerDelay = useCallback(
-        (index, totalChars) => {
-            const total = totalChars;
-            if (staggerFrom === "first") return index * staggerDuration;
-            if (staggerFrom === "last") return (total - 1 - index) * staggerDuration;
-            if (staggerFrom === "center") {
-                const center = Math.floor(total / 2);
-                return Math.abs(center - index) * staggerDuration;
-            }
-            if (staggerFrom === "random") {
-                const randomIndex = Math.floor(Math.random() * total);
-                return Math.abs(randomIndex - index) * staggerDuration;
-            }
-            return Math.abs(staggerFrom - index) * staggerDuration;
-        },
-        [staggerFrom, staggerDuration]
-    );
-
-    const handleIndexChange = useCallback(
-        (newIndex) => {
-            setCurrentTextIndex(newIndex);
-            if (onNext) onNext(newIndex);
-        },
-        [onNext]
-    );
-
-    const next = useCallback(() => {
-        const nextIndex =
-            currentTextIndex === texts.length - 1
-                ? loop
-                    ? 0
-                    : currentTextIndex
-                : currentTextIndex + 1;
-        if (nextIndex !== currentTextIndex) {
-            handleIndexChange(nextIndex);
-        }
-    }, [currentTextIndex, texts.length, loop, handleIndexChange]);
-
-    const previous = useCallback(() => {
-        const prevIndex =
-            currentTextIndex === 0
-                ? loop
-                    ? texts.length - 1
-                    : currentTextIndex
-                : currentTextIndex - 1;
-        if (prevIndex !== currentTextIndex) {
-            handleIndexChange(prevIndex);
-        }
-    }, [currentTextIndex, texts.length, loop, handleIndexChange]);
-
-    const jumpTo = useCallback(
-        (index) => {
-            const validIndex = Math.max(0, Math.min(index, texts.length - 1));
-            if (validIndex !== currentTextIndex) {
-                handleIndexChange(validIndex);
-            }
-        },
-        [texts.length, currentTextIndex, handleIndexChange]
-    );
-
-    const reset = useCallback(() => {
-        if (currentTextIndex !== 0) {
-            handleIndexChange(0);
-        }
-    }, [currentTextIndex, handleIndexChange]);
-
-    useImperativeHandle(
-        ref,
-        () => ({
-            next,
-            previous,
-            jumpTo,
-            reset,
-        }),
-        [next, previous, jumpTo, reset]
-    );
-
-    useEffect(() => {
-        if (!auto) return;
-        const intervalId = setInterval(next, rotationInterval);
-        return () => clearInterval(intervalId);
-    }, [next, rotationInterval, auto]);
-
-    return (
-        <motion.span
-            className={cn(
-                "flex flex-wrap whitespace-pre-wrap relative",
-                mainClassName
-            )}
-            {...rest}
-            layout
-            transition={transition}
-        >
-            <span className="sr-only">{texts[currentTextIndex]}</span>
-            <AnimatePresence mode={animatePresenceMode} initial={animatePresenceInitial}>
-                <motion.span
-                    key={currentTextIndex}
-                    className={cn(
-                        splitBy === "lines"
-                            ? "flex flex-col w-full"
-                            : "flex flex-wrap whitespace-pre-wrap relative"
-                    )}
-                    layout
-                    aria-hidden="true"
-                >
-                    {elements.map((wordObj, wordIndex, array) => {
-                        const previousCharsCount = array
-                            .slice(0, wordIndex)
-                            .reduce((sum, word) => sum + word.characters.length, 0);
-                        return (
-                            <span key={wordIndex} className={cn("inline-flex", splitLevelClassName)}>
-                                {wordObj.characters.map((char, charIndex) => (
-                                    <motion.span
-                                        key={charIndex}
-                                        initial={initial}
-                                        animate={animate}
-                                        exit={exit}
-                                        transition={{
-                                            ...transition,
-                                            delay: getStaggerDelay(
-                                                previousCharsCount + charIndex,
-                                                array.reduce((sum, word) => sum + word.characters.length, 0)
-                                            ),
-                                        }}
-                                        className={cn("inline-block", elementLevelClassName)}
-                                    >
-                                        {char}
-                                    </motion.span>
-                                ))}
-                                {wordObj.needsSpace && <span className="whitespace-pre"> </span>}
-                            </span>
-                        );
-                    })}
-                </motion.span>
-            </AnimatePresence>
-        </motion.span>
-    );
-});
-
-RotatingText.displayName = "RotatingText";
-
-export default Home
+export default Home;

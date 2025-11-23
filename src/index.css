@@ -10,7 +10,7 @@ body{
 
 body{
   /* background-color: black; */
-    @apply bg-[#0a090b] text-mine-shaft-50  lg:ml-30 lg:mr-30  xl:ml-60 xl:mr-60 border-red-400 sm:border-amber-300 md:border-blue-800 lg:border-pink-800 xl:border-teal-950 border-4;
+    @apply bg-[#0a090b] text-mine-shaft-50  lg:ml-25 lg:mr-25  xl:ml-50 xl:mr-50 ;
     /* @apply bg-black text-white; */
     font-family: poppins, sans-serif;
 }
@@ -19,11 +19,13 @@ body{
 }
 
 .imageborder img{
-  @apply border-1 border-gray-400 p-1 rounded-lg
+  @apply p-1 rounded-lg  w-14
 }
+
 .codeimage img{
-  @apply w-40 h-40 lg:w-30 lg:h-30 md:w-25 md:h-25 border-1 bg-[#28272a] rounded-2xl xl:p-8 md:p-4 sm:p-2 sm:w-20 sm:h-20
+  @apply w-40 h-40 lg:w-30 lg:h-30 md:w-25 md:h-25 border-1 border-bright-sun-500 bg-[#28272a] rounded-2xl md:p-4 sm:p-2 sm:w-20 sm:h-20
 }
+
 @theme {
 --color-mine-shaft-50: #f6f6f6;
 --color-mine-shaft-100: #e7e7e7;

@@ -21,22 +21,9 @@ function About() {
 
     return (
         <>
-            <img src={bannershapwebp} alt="" className='absolute -z-50 right-0 top-0 w-1/2 h-44' />
-            <section className='top-32'>
-                <div className='flex flex-row  mx-auto w-11/12 mt-12'>
-                    <img src={banner} alt="" className='w-2/4 -z-50 relative  rounded-3xl bg-transparent ' />
-                    <div className='text-start p-8 bg-transparent my-52 mr-20 -left-44 border border-bright-sun-600 relative rounded-2xl backdrop-blur-md drop-shadow-lg'>
-                        <span className='font-light text-mine-shaft-300'>Full Stack Developer</span>
-                        <h1 className='font-extrabold text-4xl my-2 text-bright-sun-400'>Birbal Kumar</h1>
-                        <p className='text-2xl'>Full Stack Developer (Entry-Level) with hands-on project experience using React, Spring Boot, and MySQL. Developed and integrated RESTful APIs, built responsive UIs with Tailwind CSS/Bootstrap, and deployed applications using Docker (public images) and Railway. Ready to apply learned skills in a real-world development environment.</p>
-                        <button className='hover:bg-[#33d46ebd] my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-[#33d46ebd] border'>About</button>
-                        <button className='hover:bg-bright-sun-500  my-4 mx-2 px-4 py-2 rounded-2xl text-2xl border-bright-sun-500 border'>Resume </button>
-                    </div>
-                </div>
-            </section>
 
             {/* What i do  */}
-
+            {/* 
             <section>
                 <div className='max-w-full'>
                     <h1 className='text-4xl text-center font-extrabold mx-24 text-bright-sun-400'>What I Do</h1>
@@ -68,11 +55,11 @@ function About() {
                     </div>
 
                 </div>
-            </section>
+            </section> */}
 
             {/* Projects Section */}
 
-            <section className="py-20 px-4">
+            {/* <section className="py-20 px-4">
                 <motion.h2
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -132,11 +119,11 @@ function About() {
                         </motion.div>
                     ))}
                 </div>
-            </section>
+            </section> */}
 
             {/* skill  */}
 
-            <section id="skills" className="py-20">
+            {/* <section id="skills" className="py-20">
                 <div className="max-w-6xl mx-auto px-6">
                     <h2 className="text-4xl font-bold text-center text-title mb-16 text-bright-sun-600 underline decoration-bright-sun-600 underline-offset-22"
                     >
@@ -221,7 +208,7 @@ function About() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
 
 
         </>
