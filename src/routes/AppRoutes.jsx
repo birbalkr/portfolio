@@ -1,8 +1,8 @@
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import MainLayout from '../app/layout/MainLayout'
-import About from '../features/portfolio/ui/pages/About'
 import HomePage from '../features/portfolio/ui/pages/HomePage'
+import AboutPage from '../features/portfolio/ui/pages/AboutPage'
 
 function AppRoutes() {
 
@@ -18,16 +18,16 @@ function AppRoutes() {
                 },
                 {
                     path: "about",
-                    element: <About />,
+                    element: <AboutPage />,
                 },
-                {
-                    path: "projects",
-                    element: <About />,
-                },
-                {
-                    path: "contact",
-                    element: <About />,
-                },
+                // {
+                //     path: "projects",
+                //     element: <About />,
+                // },
+                // {
+                //     path: "contact",
+                //     element: <About />,
+                // },
             ]
 
         }
