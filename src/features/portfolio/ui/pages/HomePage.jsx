@@ -9,6 +9,7 @@
  * Static only — no animation, no moving gradients.
  */
 
+import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
 
 function IconGithub(props) {
@@ -65,7 +66,7 @@ export default function HomePage() {
                 "An e-commerce web app with RESTful product management APIs and a React + Vite frontend.",
             tags: ["Java Spring Boot", "React", "MySQL"],
             live: null,
-            source: "https://github.com/adityakr1",
+            source: "https://github.com/birbalkr",
         },
         {
             title: "Crypto Coin Tracker",
@@ -73,9 +74,27 @@ export default function HomePage() {
                 "Real-time cryptocurrency tracker with live prices, market cap, and interactive charts.",
             tags: ["React", "Chart.js", "Redux"],
             live: "https://rococo-valkyrie-c74458.netlify.app/",
-            source: "https://github.com/adityakr1",
+            source: "https://github.com/birbal",
         },
     ];
+
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false);
+        }, 6000);
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg text-center">
+                🚧 <strong>Portfolio Under Development:</strong> This portfolio is live, but I'm actively adding new features and improving existing ones. Some pages or functionality may not work as expected.
+            </div>
+        );
+    }
 
     return (
 
@@ -90,7 +109,7 @@ export default function HomePage() {
                         </div>
 
                         <h1 className="font-serif text-5xl leading-tight text-[#EAF2F0]">
-                            Hi, I'm <span className="text-[#5DCAA5]">Aditya</span>.
+                            Hi, I'm <span className="text-[#5DCAA5]">Birbal</span>.
                         </h1>
                         <h1 className="font-serif text-5xl leading-tight text-[#6B7A76]">
                             I build the web.
@@ -121,7 +140,7 @@ export default function HomePage() {
 
                         <div className="mt-10 flex flex-wrap items-center gap-6">
                             <a
-                                href="https://github.com/adityakr1"
+                                href="https://github.com/birbalkr"
                                 aria-label="GitHub"
                                 className="text-[#A9B8B3] hover:text-[#5DCAA5]"
                             >
@@ -131,7 +150,7 @@ export default function HomePage() {
                                 <IconX />
                             </a>
                             <a
-                                href="https://www.linkedin.com/in/aditya-kumar-697381260"
+                                href="https://www.linkedin.com/in/birbal-kumar-697381260"
                                 aria-label="LinkedIn"
                                 className="text-[#A9B8B3] hover:text-[#5DCAA5]"
                             >
@@ -161,7 +180,7 @@ export default function HomePage() {
                             <span className="text-[#5DCAA5]">const</span>{" "}
                             <span className="text-[#EAF2F0]">dev</span>{" "}
                             <span className="text-[#6B7A76]">=</span> {"{"}
-                            {"\n"}  name: <span className="text-[#EF9F27]">"Aditya Kumar"</span>,
+                            {"\n"}  name: <span className="text-[#EF9F27]">"Birbal Kumar"</span>,
                             {"\n"}  role: <span className="text-[#EF9F27]">"Full Stack Developer"</span>,
                             {"\n"}  stack: [
                             {"\n"}    <span className="text-[#EF9F27]">"React"</span>,
@@ -260,7 +279,7 @@ export default function HomePage() {
                             </p>
                         </div>
                         <a
-                            href="https://github.com/adityakr1"
+                            href="https://github.com/birbalkr"
                             className="flex items-center gap-2 text-sm text-[#A9B8B3] hover:text-[#5DCAA5]"
                         >
                             All projects
@@ -296,7 +315,7 @@ export default function HomePage() {
                             </div>
                             <div className="mt-5 flex items-center gap-5 text-sm">
                                 <a
-                                    href="https://github.com/adityakr1"
+                                    href="https://github.com/birbalkr"
                                     className="flex items-center gap-1.5 text-[#A9B8B3] hover:text-[#5DCAA5]"
                                 >
                                     Source
