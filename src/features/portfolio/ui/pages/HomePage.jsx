@@ -263,7 +263,7 @@ export default function HomePage() {
             </section>
 
             <section>
-                <div className="mx-auto max-w-6xl">
+                <div className="mx-auto max-w-6xl pt-5">
                     {/* Header */}
                     <div className="mb-12 flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                         <div>

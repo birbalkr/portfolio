@@ -53,6 +53,7 @@ export default function Skills() {
       items: [
         { name: "MySQL", percent: 88 },
         { name: "MongoDB", percent: 85 },
+        { name: "PostgreSQL", percent: 70 },
       ],
     },
     {
@@ -63,6 +64,7 @@ export default function Skills() {
         { name: "Netlify / Railway.app", percent: 80 },
         { name: "Kubernetes", percent: 35 },
         { name: "DigitalOcean", percent: 35 },
+        { name: "AWS (EC2, S3, RDS)", percent: 30}
       ],
     },
     {
@@ -70,7 +72,6 @@ export default function Skills() {
       items: [
         { name: "Git / GitHub", percent: 85 },
         { name: "REST API Design", percent: 80 },
-        { name: "Vite", percent: 80 },
         { name: "Redux", percent: 75 },
         { name: "Axios", percent: 80 },
         { name: "Chart.js", percent: 75 },

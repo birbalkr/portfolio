@@ -26,7 +26,7 @@ function ProfileImage() {
     return (
         <img
             src="https://ui-avatars.com/api/?name=Aditya+Kumar&background=1D9E75&color=EAF2F0&size=320&font-size=0.33&bold=true"
-            alt="Aditya Kumar"
+            alt="Birbal kumar"
             className="h-56 w-56 rounded-2xl border border-[#1F2B27] object-cover md:h-64 md:w-64"
         />
     );

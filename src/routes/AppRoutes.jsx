@@ -4,6 +4,7 @@ import MainLayout from '../app/layout/MainLayout'
 import HomePage from '../features/portfolio/ui/pages/HomePage'
 import AboutPage from '../features/portfolio/ui/pages/AboutPage'
 import Contact from '../features/portfolio/ui/pages/Contact'
+import Projects from '../features/portfolio/ui/pages/Projects'
 
 function AppRoutes() {
 
@@ -23,7 +24,7 @@ function AppRoutes() {
                 },
                 {
                     path: "projects",
-                    element: <AboutPage />,
+                    element: <Projects />,
                 },
                 {
                     path: "contact",
