@@ -5,6 +5,7 @@ import HomePage from '../features/portfolio/ui/pages/HomePage'
 import AboutPage from '../features/portfolio/ui/pages/AboutPage'
 import Contact from '../features/portfolio/ui/pages/Contact'
 import Projects from '../features/portfolio/ui/pages/Projects'
+import ErrorPage from '../features/portfolio/ui/pages/ErrorPage'
 
 function AppRoutes() {
 
@@ -13,7 +14,11 @@ function AppRoutes() {
             path: "",
             element: <MainLayout />,
 
-            children: [ 
+            children: [
+                {
+                    path: '*',
+                    element: <ErrorPage />
+                },
                 {
                     path: "",
                     element: <HomePage />,
