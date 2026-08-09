@@ -1,18 +1,3 @@
-/**
- * AboutPage
- * Full about page: navbar, About Me (bio + profile photo), a categorized
- * Technical Skills section ("Tools of the trade."), and an Education
- * section. Same palette/type system as the rest of the site — near-black
- * background, mint accent, amber for CTAs, serif headings. Static only,
- * no animation.
- *
- * Profile image is a placeholder avatar (initials-based) generated via
- * ui-avatars.com — swap the `src` in <ProfileImage /> for your real photo
- * before publishing.
- *
- * Education is left as a placeholder — add your real degree, institution,
- * and year(s) in the `education` array below.
- */
 
 function TechTag({ children }) {
     return (
