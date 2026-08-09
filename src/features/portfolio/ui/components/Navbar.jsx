@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import resumePdf from "../../../../assets/Birbal_Resume.pdf";
 
 export default function Navbar() {
     return (
@@ -31,14 +32,29 @@ export default function Navbar() {
                     >
                         Contact
                     </NavLink>
+
+
+                    <NavLink
+                        to='/blogs'
+                        className={({ isActive }) =>
+                            isActive ? "text-green-500 font-semibold" : "text-gray-300 hover:text-blue-500 transition"
+                        }
+                    >
+                        Blogs
+                    </NavLink>
+
                 </div>
 
                 <a
-                    href="#resume"
+                    href={resumePdf}
+                    download
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="rounded-full bg-[#F4A93B] px-5 py-2 text-sm font-semibold text-[#0E4F4A] hover:bg-[#f5b658]"
                 >
                     Resume
                 </a>
+
             </nav>
         </div>
 
