@@ -1,6 +1,8 @@
+import { useForm } from "react-hook-form";
 
 export default function Contact() {
 
+    const { register, reset, handleSubmit, formState: { errors } } = useForm()
 
     return (
         <section id="contact" className=" px-6 py-24">
@@ -50,7 +52,10 @@ export default function Contact() {
 
                 {/* Right column — form */}
                 <form
-
+                    onSubmit={handleSubmit((data) => {
+                        console.log(data);
+                        reset();
+                    })}
                     className="rounded-2xl border border-[#1F2B27] bg-[#0E1917] p-8"
                 >
                     <div className="mb-5">
@@ -58,14 +63,14 @@ export default function Contact() {
                             Name
                         </label>
                         <input
+                            {...register("name", { required: true, maxLength: 80 })}
                             id="name"
                             name="name"
                             type="text"
-                            required
-
                             placeholder="Your name"
                             className="w-full rounded-lg border border-[#2C3B37] bg-[#0A1613] px-4 py-3 text-sm text-[#EAF2F0] placeholder-[#6B7A76] outline-none focus:border-[#5DCAA5]"
                         />
+                        {errors.name && <span className="text-[#E24B4A] text-sm">This field is required</span>}
                     </div>
 
                     <div className="mb-5">
@@ -73,14 +78,14 @@ export default function Contact() {
                             Email
                         </label>
                         <input
+                            {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                             id="email"
                             name="email"
                             type="email"
-                            required
-
                             placeholder="you@example.com"
                             className="w-full rounded-lg border border-[#2C3B37] bg-[#0A1613] px-4 py-3 text-sm text-[#EAF2F0] placeholder-[#6B7A76] outline-none focus:border-[#5DCAA5]"
                         />
+                        {errors.email && <span className="text-[#E24B4A] text-sm">This field is required</span>}
                     </div>
 
                     <div className="mb-6">
@@ -88,14 +93,14 @@ export default function Contact() {
                             Message
                         </label>
                         <textarea
+                        {...register("message", { required: true })}
                             id="message"
                             name="message"
-                            required
                             rows={5}
-
                             placeholder="What are you looking to build?"
                             className="w-full resize-none rounded-lg border border-[#2C3B37] bg-[#0A1613] px-4 py-3 text-sm text-[#EAF2F0] placeholder-[#6B7A76] outline-none focus:border-[#5DCAA5]"
                         />
+                        {errors.message && <span className="text-[#E24B4A] text-sm">This field is required</span>}
                     </div>
 
                     <button

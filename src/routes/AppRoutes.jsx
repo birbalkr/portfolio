@@ -12,7 +12,7 @@ function AppRoutes() {
             path: "",
             element: <MainLayout />,
 
-            children: [
+            children: [ 
                 {
                     path: "",
                     element: <HomePage />,

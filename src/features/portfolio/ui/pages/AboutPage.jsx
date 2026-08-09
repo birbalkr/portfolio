@@ -1,3 +1,5 @@
+import Skills from "../components/Skills";
+
 
 function TechTag({ children }) {
     return (
@@ -32,29 +34,7 @@ function ProfileImage() {
 
 
 export default function AboutPage() {
-    const skillCategories = [
-        {
-            label: "FRONTEND",
-            items: ["React", "TypeScript", "Tailwind CSS", "React Native"],
-        },
-        {
-            label: "BACKEND",
-            items: ["Java", "Spring Boot", "Node.js", "Express.js", "Python", "Kotlin"],
-        },
-        {
-            label: "DATABASE",
-            items: ["MySQL", "MongoDB"],
-        },
-        {
-            label: "CLOUD & DEVOPS",
-            items: ["Docker", "Linux (Ubuntu)", "Railway.app", "Netlify", "Kubernetes", "DigitalOcean"],
-        },
-        {
-            label: "TOOLS & LIBRARIES",
-            items: ["Git", "GitHub", "REST APIs", "Vite", "Redux", "Axios", "Chart.js"],
-        },
-    ];
-
+    
     const education = [
         {
             degree: "[Add your degree, e.g. B.Tech in Computer Science]",
@@ -116,30 +96,7 @@ export default function AboutPage() {
             </section>
 
             {/* Technical Skills */}
-            <section id="skills" className="px-6 py-20">
-                <div className="mx-auto max-w-6xl">
-                    <p className="mb-4 text-xs font-semibold tracking-widest text-[#5DCAA5]">
-                        TECHNICAL SKILLS
-                    </p>
-                    <h2 className="font-serif text-4xl leading-tight text-[#EAF2F0] sm:text-5xl">
-                        Tools of the trade.
-                    </h2>
-                    <p className="mt-3 max-w-xl text-base text-[#A9B8B3]">
-                        A curated list of technologies I work with on a daily basis, both
-                        professionally and personally.
-                    </p>
-
-                    <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                        {skillCategories.map((category) => (
-                            <SkillCategory
-                                key={category.label}
-                                label={category.label}
-                                items={category.items}
-                            />
-                        ))}
-                    </div>
-                </div>
-            </section>
+            <Skills />
 
             {/* Education */}
             <section className="px-6 py-20">
