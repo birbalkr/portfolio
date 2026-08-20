@@ -1,16 +1,7 @@
-/**
- * Portfolio Hero (final)
- * Combines the floating pill navbar with the two-column dev hero below it.
- * Fix from previous pass: social icons now use inline SVG instead of
- * lucide-react, since Github/Twitter/Linkedin were silently failing to
- * render in the live app. Also tightened spacing and made the navbar
- * and content share the same max-width so both edges line up.
- * Palette: near-black bg, deep teal surfaces, amber accent, mint text accent.
- * Static only — no animation, no moving gradients.
- */
 
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router";
+import gsap from "gsap";
+import { useEffect, useRef } from "react";
 
 function IconGithub(props) {
     return (
@@ -20,21 +11,6 @@ function IconGithub(props) {
     );
 }
 
-function IconX(props) {
-    return (
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" {...props}>
-            <path d="M13.53 10.71 20.9 2h-1.75l-6.4 7.56L7.65 2H2l7.72 11.14L2 22h1.75l6.76-7.98L16.35 22H22l-8.47-11.29Zm-2.39 2.82-.78-1.1L4.15 3.3h2.68l5.02 7.1.78 1.1 6.53 9.24h-2.68l-5.34-7.21Z" />
-        </svg>
-    );
-}
-
-function IconLinkedin(props) {
-    return (
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" {...props}>
-            <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45Z" />
-        </svg>
-    );
-}
 
 function TechTag({ children }) {
     return (
@@ -45,6 +21,30 @@ function TechTag({ children }) {
 }
 
 export default function HomePage() {
+
+    // Animaion
+    const container = useRef(null);
+
+    useEffect(() => {
+        gsap.context(() => {
+            gsap.from(".hero", {
+                y: 80,
+                opacity: 0,
+                duration: 1,
+                ease: "power1.inOut",
+            });
+
+            gsap.from(".rightside", {
+                y: 80,
+                opacity: 0,
+                duration: 0.7,
+                ease: "power3.in",
+            });
+
+        }, container);
+
+    }, []);
+
 
     const stats = [
         { value: "3+", label: "Projects built", sub: "Shopping app to a full crop-tracking system" },
@@ -78,32 +78,13 @@ export default function HomePage() {
         },
     ];
 
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 6000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
-    if (loading) {
-        return (
-            <div className="bg-yellow-100 border border-yellow-400 text-yellow-800 px-4 py-3 rounded-lg text-center">
-                🚧 <strong>Portfolio Under Development:</strong> This portfolio is live, but I'm actively adding new features and improving existing ones. Some pages or functionality may not work as expected.
-            </div>
-        );
-    }
-
     return (
 
         <section>
-
-            <section>
+            <section ref={container}>
                 <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 py-20 lg:grid-cols-2">
                     {/* Left column */}
-                    <div>
+                    <div className="hero">
                         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-[#1D9E75] bg-[#0E4F4A]/40 px-4 py-1.5 text-sm text-[#5DCAA5]">
                             Open to full stack opportunities
                         </div>
@@ -144,17 +125,17 @@ export default function HomePage() {
                                 aria-label="GitHub"
                                 className="text-[#A9B8B3] hover:text-[#5DCAA5]"
                             >
-                                <IconGithub />
+                                <i className="fa-brands fa-github size-3"></i>
                             </a>
-                            <a href="#" aria-label="X (Twitter)" className="text-[#A9B8B3] hover:text-[#5DCAA5]">
-                                <IconX />
+                            <a href="https://leetcode.com/u/Hq4okMbx7u/" aria-label="leetcode" className="text-[#A9B8B3] hover:text-[#5DCAA5]">
+                                <i class="fa-brands fa-leetcode"></i>
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/birbal-kumar-697381260"
                                 aria-label="LinkedIn"
                                 className="text-[#A9B8B3] hover:text-[#5DCAA5]"
                             >
-                                <IconLinkedin />
+                                <i class="fa-brands fa-linkedin-in"></i>
                             </a>
 
                             <span className="h-5 w-px bg-[#2C3B37]" />
@@ -169,7 +150,7 @@ export default function HomePage() {
                     </div>
 
                     {/* Right column — code card */}
-                    <div className="rounded-xl border border-[#1F2B27] bg-[#0E1917] p-6 text-white">
+                    <div className=" rightside rounded-xl border border-[#1F2B27] bg-[#0E1917] p-6 text-white">
                         <div className="mb-4 flex items-center gap-2 border-b border-[#1F2B27] pb-4">
                             <span className="h-3 w-3 rounded-full bg-[#E24B4A]" />
                             <span className="h-3 w-3 rounded-full bg-[#EF9F27]" />

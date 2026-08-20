@@ -5,7 +5,13 @@ import DemoCode from '../../features/portfolio/ui/pages/DemoCode'
 import Ferrofluid from '../../features/portfolio/ui/pages/DemoCode'
 import { Outlet } from 'react-router'
 
+
 function MainLayout() {
+
+
+
+
+
     return (
         <section
             className="relative min-h-screen bg-[#0A1613]"
@@ -15,11 +21,15 @@ function MainLayout() {
                 backgroundSize: "22px 22px",
             }}
         >
-            <Navbar />
-            <Outlet/>
-            
 
+            <Navbar />
+            <Outlet />
+
+
+            
         </section>
+
+
 
     )
 }
