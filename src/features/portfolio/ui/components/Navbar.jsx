@@ -62,13 +62,22 @@ export default function Navbar() {
 
 
                     <NavLink
+                        to='https://buildui-project.netlify.app/'
+                        className={({ isActive }) =>
+                            isActive ? "text-green-500 font-semibold" : "text-gray-300 hover:text-blue-500 transition"
+                        }
+                    >
+                        🧩 BuildUI
+                    </NavLink>
+
+                    {/* <NavLink
                         to='https://portfolio-blogs.netlify.app/'
                         className={({ isActive }) =>
                             isActive ? "text-green-500 font-semibold" : "text-gray-300 hover:text-blue-500 transition"
                         }
                     >
                         Blogs
-                    </NavLink>
+                    </NavLink> */}
 
                 </div>
 
