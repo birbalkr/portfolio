@@ -62,7 +62,7 @@ export default function Navbar() {
 
 
                     <NavLink
-                        to='https://buildui-project.netlify.app/'
+                        to='https://build-ui-8k5h-nu.vercel.app/'
                         className={({ isActive }) =>
                             isActive ? "text-green-500 font-semibold" : "text-gray-300 hover:text-blue-500 transition"
                         }
