@@ -9,24 +9,26 @@ import Project from '../pages/Project';
 const router = createBrowserRouter([
     {
         path: '/',
-        element: <MainLayout />
-    },
-    {
-        path: '/about',
-        element: <About />
-    },
-    {
-        path: '/skill',
-        element: <Skill />
-    },
-    {
-        path: '/contact',
-        element: <Contact />
-    },
-    {
-        path: '/project',
-        element: <Project />
-    },
+        element: <MainLayout />,
+        children: [
+            {
+                path: 'about',
+                element: <About />
+            },
+            {
+                path: 'skill',
+                element: <Skill />
+            },
+            {
+                path: 'contact',
+                element: <Contact />
+            },
+            {
+                path: 'project',
+                element: <Project />
+            },
+        ]
+    }
 
 ]);
 
