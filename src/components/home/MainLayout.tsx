@@ -5,7 +5,7 @@ import { Outlet } from 'react-router'
 
 function MainLayout() {
     return (
-        <div className='bg-[#FAF8F3]'>
+        <div className='bg-background h-screen'>
             <Navbar/>
             <Outlet/>
             <Footer />

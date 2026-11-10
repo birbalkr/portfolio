@@ -1,47 +1,105 @@
+import { useState } from "react"
 import { NavLink } from "react-router"
+import { AiOutlineCloseCircle, AiOutlineMenu } from "react-icons/ai";
 
 function Navbar() {
+    const [isOpen, setIsOpen] = useState(false)
+
     return (
-        <div className="flex justify-around items-center p-4 text-md">
-            <div className="text-xl font-bold">Birbal</div>
-            <div className="flex gap-4 border rounded-2xl p-3">
+        <div className="flex justify-between items-center p-4 text-md">
+            <div className="text-xl font-bold flex items-end-safe">Birbal <div className="h-3 w-3 rounded-2xl bg-accent"></div> </div>
+            <div className="hidden  gap-4 border rounded-2xl p-3 md:flex">
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-[#CDF22B] text-[#08090B]"
-                        : "text-[#08090B] hover:bg-gray-200"
+                        ? "bg-accent text-foreground"
+                        : "text-foreground hover:bg-gray-200"
                     }`
                 }
-                to="/"
-                end
+                    to="/"
+                    end
                 >Home</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-[#CDF22B] text-[#08090B]"
-                        : "text-[#08090B] hover:bg-gray-200"
+                        ? "bg-accent text-foreground"
+                        : "text-foreground hover:bg-gray-200"
                     }`
                 } to="/about">About</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-[#CDF22B] text-[#08090B]"
-                        : "text-[#08090B] hover:bg-gray-200"
+                        ? "bg-accent text-foreground"
+                        : "text-foreground hover:bg-gray-200"
                     }`
                 } to="/skill">Toolkit</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-[#CDF22B] text-[#08090B]"
-                        : "text-[#08090B] hover:bg-gray-200"
+                        ? "bg-accent text-foreground"
+                        : "text-foreground hover:bg-gray-200"
                     }`
                 } to="/project">Projects</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-[#CDF22B] text-[#08090B]"
-                        : "text-[#08090B] hover:bg-gray-200"
+                        ? "bg-accent text-foreground"
+                        : "text-foreground] hover:bg-gray-200"
                     }`
                 } to="/contact">Contact</NavLink>
             </div>
-            <div>
-                <button className="rounded-full bg-[#08090B] px-6 py-3 text-sm font-semibold text-[#FAF8F3] transition hover:bg-[#CDF22B] hover:text-[#08090B]">Let's talk</button>
+            <div className="hidden md:block">
+                <button className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-foreground">Let's talk</button>
             </div>
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className="rounded-lg p-2 text-white md:hidden"
+                aria-label="Toggle menu"
+            >
+                {isOpen ? (
+                    <AiOutlineCloseCircle size={28} className="text-accent" />
+                ) : (
+                    <AiOutlineMenu size={28} className="text-accent" />
+                )}
+            </button>
+
+            {/* mobile view */}
+            {isOpen && (
+                <div className="absolute top-16 left-0 w-full bg-foreground px-6 pt-6 pb-0 backdrop-blur-lg md:hidden text-">
+                    <div className="flex flex-col gap-4">
+                        <NavLink className={({ isActive }) =>
+                            `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                                ? "bg-accent text-foreground"
+                                : "text-background hover:text-foreground hover:bg-accent"
+                            }`
+                        }
+                            to="/"
+                            end
+                        >Home</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                                ? "bg-accent text-foreground"
+                                : "text-background hover:text-foreground hover:bg-accent"
+                            }`
+                        } to="/about">About</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                                ? "bg-accent text-foreground"
+                                : "text-background hover:text-foreground hover:bg-accent"
+                            }`
+                        } to="/skill">Toolkit</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                                ? "bg-accent text-foreground"
+                                : "text-background hover:text-foreground hover:bg-accent"
+                            }`
+                        } to="/project">Projects</NavLink>
+                        <NavLink className={({ isActive }) =>
+                            `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
+                                ? "bg-accent text-foreground"
+                                : "text-background hover:text-foreground hover:bg-accent"
+                            }`
+                        } to="/contact">Contact</NavLink>
+                        <button className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-foreground">Let's talk</button>
+
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
