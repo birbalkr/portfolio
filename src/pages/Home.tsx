@@ -1,16 +1,10 @@
 
 import { NavLink } from "react-router";
 import { gsap } from "gsap";
-import { useEffect, useRef, type ReactNode } from "react";
-import { featuredProject, otherProjects, stats, tags } from "../data/portfolio";
+import { useEffect, useRef } from "react";
+import { stats, tags } from "../data/portfolio";
 
-function TechTag({ children }: { children: ReactNode }) {
-    return (
-        <span className="rounded-full bg-[#152420] px-3 py-1 text-xs text-[#A9B8B3]">
-            {children}
-        </span>
-    );
-}
+
 
 export default function Home() {
 
