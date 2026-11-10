@@ -6,9 +6,9 @@ function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <div className="flex justify-between items-center p-4 text-md">
+        <div className="flex justify-around items-center py-4 text-md rounded-2xl mx-40 drop-shadow-2xl border border-gray-200">
             <div className="text-xl font-bold flex items-end-safe">Birbal <div className="h-3 w-3 rounded-2xl bg-accent"></div> </div>
-            <div className="hidden  gap-4 border rounded-2xl p-3 md:flex">
+            <div className="hidden  gap-4 p-3 md:flex">
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
                         ? "bg-accent text-textcolor"
