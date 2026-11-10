@@ -2,6 +2,7 @@
 
 @theme {
     --color-background: #FAF8F3;
-    --color-foreground: #08090B;
+    --color-textcolor: #08090B;
     --color-accent: #CDF22B;
+    --color-headingcolor: #FF6845
 }

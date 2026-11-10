@@ -11,8 +11,8 @@ function Navbar() {
             <div className="hidden  gap-4 border rounded-2xl p-3 md:flex">
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-foreground hover:bg-gray-200"
+                        ? "bg-accent text-textcolor"
+                        : "text-textcolor hover:bg-gray-200"
                     }`
                 }
                     to="/"
@@ -20,31 +20,31 @@ function Navbar() {
                 >Home</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-foreground hover:bg-gray-200"
+                        ? "bg-accent text-textcolor"
+                        : "text-textcolor hover:bg-gray-200"
                     }`
                 } to="/about">About</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-foreground hover:bg-gray-200"
+                        ? "bg-accent text-textcolor"
+                        : "text-textcolor hover:bg-gray-200"
                     }`
                 } to="/skill">Toolkit</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-foreground hover:bg-gray-200"
+                        ? "bg-accent text-textcolor"
+                        : "text-textcolor hover:bg-gray-200"
                     }`
                 } to="/project">Projects</NavLink>
                 <NavLink className={({ isActive }) =>
                     `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                        ? "bg-accent text-foreground"
-                        : "text-foreground] hover:bg-gray-200"
+                        ? "bg-accent text-textcolor"
+                        : "text-textcolor] hover:bg-gray-200"
                     }`
                 } to="/contact">Contact</NavLink>
             </div>
             <div className="hidden md:block">
-                <button className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-foreground">Let's talk</button>
+                <button className="rounded-full bg-textcolor px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-textcolor">Let's talk</button>
             </div>
             <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -60,12 +60,12 @@ function Navbar() {
 
             {/* mobile view */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-foreground px-6 pt-6 pb-0 backdrop-blur-lg md:hidden text-">
+                <div className="absolute top-16 left-0 w-full bg-textcolor px-6 pt-6 pb-0 backdrop-blur-lg md:hidden text-">
                     <div className="flex flex-col gap-4">
                         <NavLink className={({ isActive }) =>
                             `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                                ? "bg-accent text-foreground"
-                                : "text-background hover:text-foreground hover:bg-accent"
+                                ? "bg-accent text-textcolor"
+                                : "text-background hover:text-textcolor hover:bg-accent"
                             }`
                         }
                             to="/"
@@ -73,29 +73,29 @@ function Navbar() {
                         >Home</NavLink>
                         <NavLink className={({ isActive }) =>
                             `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                                ? "bg-accent text-foreground"
-                                : "text-background hover:text-foreground hover:bg-accent"
+                                ? "bg-accent text-textcolor"
+                                : "text-background hover:text-textcolor hover:bg-accent"
                             }`
                         } to="/about">About</NavLink>
                         <NavLink className={({ isActive }) =>
                             `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                                ? "bg-accent text-foreground"
-                                : "text-background hover:text-foreground hover:bg-accent"
+                                ? "bg-accent text-textcolor"
+                                : "text-background hover:text-textcolor hover:bg-accent"
                             }`
                         } to="/skill">Toolkit</NavLink>
                         <NavLink className={({ isActive }) =>
                             `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                                ? "bg-accent text-foreground"
-                                : "text-background hover:text-foreground hover:bg-accent"
+                                ? "bg-accent text-textcolor"
+                                : "text-background hover:text-textcolor hover:bg-accent"
                             }`
                         } to="/project">Projects</NavLink>
                         <NavLink className={({ isActive }) =>
                             `rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${isActive
-                                ? "bg-accent text-foreground"
-                                : "text-background hover:text-foreground hover:bg-accent"
+                                ? "bg-accent text-textcolor"
+                                : "text-background hover:text-textcolor hover:bg-accent"
                             }`
                         } to="/contact">Contact</NavLink>
-                        <button className="rounded-full bg-foreground px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-foreground">Let's talk</button>
+                        <button className="rounded-full bg-textcolor px-6 py-3 text-sm font-semibold text-background transition hover:bg-accent hover:text-textcolor">Let's talk</button>
 
                     </div>
                 </div>

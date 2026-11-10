@@ -5,12 +5,17 @@ import About from '../pages/About';
 import Skill from '../pages/Skill';
 import Contact from '../pages/Contact';
 import Project from '../pages/Project';
+import Home from '../pages/Home';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
         children: [
+            {
+                path: '',
+                element: <Home />
+            },
             {
                 path: 'about',
                 element: <About />
